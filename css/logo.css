@@ -1,11 +1,11 @@
 .logo
 {
   	position: relative;
-  	top: -95px;
+  	top: -50px;
   	left: -15px;
-  	height: 275px;
+  	height: 300px;
   	width: 300px;
-  	background-image: url("https://cdn.minds.com/icon/827520439789035524/large/1523779793");
+  	background-image: url('../img/avatar.gif');
 }
 
 .triangle 
