@@ -1,0 +1,18 @@
+.wrapper
+{
+  	position: relative;
+  	top: -90px;
+  	height: 310px;
+  	width: 300px;
+  	background-image: url("https://cdn.minds.com/icon/827520439789035524/large/1523779793");
+}
+
+.triangle 
+{
+  	border-bottom: 100px solid #ddd;
+  	border-left: 300px solid transparent;
+  	position: absolute;
+  	width: 0px;
+  	bottom: 0px;
+  	right: 0px;
+}
