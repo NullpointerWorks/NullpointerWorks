@@ -1,7 +1,7 @@
 .logo
 {
   	position: relative;
-  	top: -50px;
+  	top: -75px;
   	left: -15px;
   	height: 300px;
   	width: 300px;
@@ -10,7 +10,7 @@
 
 .triangle 
 {
-  	border-bottom: 100px solid #ddd;
+  	border-bottom: 100px solid #f0f0f0;
   	border-left: 300px solid transparent;
   	position: absolute;
   	width: 0px;

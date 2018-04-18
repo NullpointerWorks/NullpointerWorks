@@ -23,7 +23,7 @@ div
 	display: inline-block;
 	vertical-align: top;
 	
-	background-color: #ddd;
+	background-color: #f0f0f0;
 	width: 285px;
 	height: 100vh; /* 100% viewport height */
 }
