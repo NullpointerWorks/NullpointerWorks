@@ -38,7 +38,7 @@
 				      	</ul>
 				   	</li>
 				   	
-				   	<li class='has-sub'><a href='#'>Demos</a>
+				   	<li class='has-sub'><a href=''>Demos</a>
 				      	<ul>
 				         	<li><a href='#' onclick="setIframeSrc('sub/demo/mode7/mode7.html', 'Mode7 pseudo 3D');">Mode 7 pseudo 3D</a></li>
 				      	</ul>
@@ -75,6 +75,7 @@
 		</div>
 	</body>
 	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/string.js" type="text/javascript"></script>
 	<script src="js/menu.js" type="text/javascript"></script>
 	<script>
 		function setIframeSrc(url, title) 
@@ -84,7 +85,10 @@
 		    	document.title = title + " - NullpointerWorks";
 		}
 		
-		window.onload = function() {setIframeSrc('sub/about/about.html', undefined);}
+		window.onload = function() 
+		{
+			setIframeSrc('sub/about/about.html', undefined);
+		}
 	</script>
 	
 </html>

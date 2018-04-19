@@ -2,6 +2,7 @@ body
 {
 	padding: 0px;
 	margin: 0px;
+	background-color: #003232;
 }
 
 div
@@ -14,8 +15,7 @@ h2
 {
 	margin: 0px 0px 15px 0px;
 	font-family: consolas;
-	font-size: 2em;
-	color: #003232;
+	font-size: 2em;x
 }
 
 .header
