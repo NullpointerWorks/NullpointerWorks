@@ -27,42 +27,41 @@
 				logo + accordion menu
 			-->
 			<div class="menu">
-				<div class="logo"><div class="triangle"></div></div>
-				
-				<div id='cssmenu'>
-					<ul>
-					<li class='has-sub'><a href='#'>Projects</a>
-				   		<ul>
-				         	<li><a href='#'>JRender</a></li>
-				         	<li><a href='#'>I/O Manager</a></li>
-				      	</ul>
-				   	</li>
-				   	
-				   	<li class='has-sub'><a href=''>Demos</a>
-				      	<ul>
-				         	<li><a href='#' onclick="setIframeSrc('sub/demo/mode7/mode7.html', 'Mode7 pseudo 3D');">Mode 7 pseudo 3D</a></li>
-				      	</ul>
-				   	</li>
-				   	
-				   	<li class='has-sub'><a href='#'>Game plans</a>
-				      	<ul>
-				         	<li><a href='#'>Vertical scroller</a></li>
-				         	<li><a href='#'>Multiplayer sandbox</a></li>
-				         	<li><a href='#'>Mode 7 racing game</a></li>
-				      	</ul>
-				   	</li>
-				   	
-				   	<li class='has-sub'><a href='#'>App plans</a>
-				      	<ul>
-				         	<li><a href='#'>HTML transpiler</a></li>
-				         	<li><a href='#'>Jukebox using Mode 7</a></li>
-				      	</ul>
-				   	</li>
-				   
-				   	<li><a href='#' onclick="setIframeSrc('sub/about/about.html', 'About');">About</a></li>
-				   	<li><a href='#'>Contact</a></li>
-				</ul>
-				</div>
+			<div class="logo" onclick="setIframeSrc('sub/home/home.html', undefined);" >
+				<div class="triangle"></div>
+			</div>
+			
+			<div id='cssmenu'>
+			<ul>
+				<li class='has-sub'><a href='#'>Projects</a>
+			   		<ul>
+			         	<li><a href='#'>JRender</a></li>
+			         	<li><a href='#'>I/O Manager</a></li>
+			      	</ul>
+			   	</li>
+			   	
+			   	<li class='has-sub'><a href=''>Demos</a>
+			      	<ul>
+			         	<li><a href='#' onclick="setIframeSrc('sub/demo/mode7/mode7.html', 'Mode7 pseudo 3D');">Mode 7 pseudo 3D</a></li>
+			      	</ul>
+			   	</li>
+			   	
+			   	<li class='has-sub'><a href='#'>Game plans</a>
+			      	<ul>
+			         	<li><a href='#'>Vertical scroller</a></li>
+			         	<li><a href='#'>Multiplayer sandbox</a></li>
+			         	<li><a href='#'>Mode 7 racing game</a></li>
+			      	</ul>
+			   	</li>
+			   	
+			   	<li class='has-sub'><a href='#'>App plans</a>
+			      	<ul>
+			         	<li><a href='#'>HTML transpiler</a></li>
+			         	<li><a href='#'>Jukebox using Mode 7</a></li>
+			      	</ul>
+			   	</li>
+			</ul>
+			</div>
 			</div>
 			
 			<!-- 
@@ -82,12 +81,14 @@
 		{
 		    document.getElementById('contentiframe').src = url;
 		    if (title != undefined)
-		    	document.title = title + " - NullpointerWorks";
+		    	document.title = title + " - Null*";
+		    else
+		    	document.title = "Null*";
 		}
 		
 		window.onload = function() 
 		{
-			setIframeSrc('sub/about/about.html', undefined);
+			setIframeSrc('sub/home/home.html', undefined);
 		}
 	</script>
 	

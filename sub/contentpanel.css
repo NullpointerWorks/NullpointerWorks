@@ -11,6 +11,12 @@ div
 	margin: 0px;
 }
 
+img
+{
+	width: 100%; /* auto resize */
+    height: auto;
+}
+
 h2
 {
 	margin: 0px 0px 15px 0px;
