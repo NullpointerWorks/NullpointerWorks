@@ -11,17 +11,22 @@ div
 	margin: 0px;
 }
 
+h2
+{
+	margin: 0px 0px 15px 0px;
+	font-family: consolas;
+	font-size: 2em;x
+}
+
 img
 {
 	width: 100%; /* auto resize */
     height: auto;
 }
 
-h2
+img.icon
 {
-	margin: 0px 0px 15px 0px;
-	font-family: consolas;
-	font-size: 2em;x
+	width: 50px;
 }
 
 .header
