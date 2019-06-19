@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Nullpointer Works</title>
-	 	<meta charset="utf-8">
-	 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	 	<meta name="description" content="Nullpointer Works project page">
-		<meta name="keywords" content="java,game,app,null*,nullpointer,works,nullpointerworks">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Nullpointer">
-	 	<link rel="icon" href="favicon.gif">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<link rel="stylesheet" type="text/css" href="css/menu.css">
-		<link rel="stylesheet" type="text/css" href="css/menu.css">
-		<link rel="stylesheet" type="text/css" href="css/logo.css">
-	</head>
-	<body>
-		<div id="main">
-			<!--	menu code -->
-			<div class="menu">
-				<!-- logo + accordion menu -->
-				<div class="logo" onclick="setIframeSrc('sub/home/home.html', undefined);" >
-					<div class="triangle"></div>
-				</div>
-				<!-- navigation bar -->
-				<div id='cssmenu'>
+<head>
+	<title>Nullpointer Works</title>
+ 	<meta charset="utf-8"/>
+ 	<meta name="description" content="Nullpointer Works project page"/>
+	<meta name="keywords" content="java,game,app,null*,nullpointer,works,nullpointerworks"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="author" content="Nullpointer"/>
+ 	<link rel="icon" href="img/favicon.gif"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/menu.css"/>
+</head>
+<body>
+	<div id="main">
+		<!--	menu code -->
+		<div class="menu">
+			<!-- logo + accordion menu -->
+			<div class="logo" onclick="setIframeSrc('sub/home/home.html', undefined);" >
+				<div class="triangle"></div>
+			</div>
+			<!-- navigation bar -->
+			<div id='cssmenu'>
 				<ul>
 					<li class='has-sub'><a href='#'>Libraries</a>
-			   		<ul>
-			        <li><a href='#' onclick="setIframeSrc('', '');">libNPW</a></li>
-			      </ul>
-			   	</li>
-			   	<li class='has-sub'><a href=''>Demos</a>
-		      	<ul>
-		         	<li><a href='#' onclick="setIframeSrc('sub/demo/mode7/mode7.html', 'Mode 7');">Mode 7</a></li>
-		         	<li><a href='#' onclick="setIframeSrc('sub/demo/astar/astar.html', 'A* path finding');">A* pathfinding</a></li>
-		      	</ul>
-			   	</li>
+						<ul>
+							<li><a href='#' onclick="setIframeSrc('', '');">libNPW</a></li>
+						</ul>
+					</li>
+					<li class='has-sub'><a href=''>Demos</a>
+						<ul>
+							<li><a href='#' onclick="setIframeSrc('sub/demo/mode7/mode7.html', 'Mode 7');">Mode 7</a></li>
+							<li><a href='#' onclick="setIframeSrc('sub/demo/astar/astar.html', 'A* path finding');">A* pathfinding</a></li>
+						</ul>
+					</li>
 				</ul>
-				</div>
-			</div>
-			<!-- content pane -->
-			<div class="content">
-				<iframe id="contentiframe" class="iframe"></iframe>
 			</div>
 		</div>
-	</body>
-
-	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="js/string.js" type="text/javascript"></script>
-	<script src="js/menu.js" type="text/javascript"></script>
-	<script>
-		function setIframeSrc(url, title)
-		{
-		    document.getElementById('contentiframe').src = url;
-		    if (title != undefined)
-		    	document.title = title + " - Nullpointer Works";
-		    else
-		    	document.title = "Nullpointer Works";
-		}
-		window.onload = function()
-		{
-			setIframeSrc('sub/home/home.html', undefined);
-		}
-	</script>
-
+		<!-- content pane -->
+		<div class="content">
+			<iframe id="contentiframe" class="iframe"></iframe>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="js/string.js" type="text/javascript"></script>
+<script src="js/menu.js" type="text/javascript"></script>
+<script>
+	function setIframeSrc(url, title)
+	{
+	    document.getElementById('contentiframe').src = url;
+	    if (title != undefined)
+	    	document.title = title + " - Nullpointer Works";
+	    else
+	    	document.title = "Nullpointer Works";
+	}
+	window.onload = function()
+	{
+		setIframeSrc('sub/home/home.html', undefined);
+	}
+</script>
 </html>
