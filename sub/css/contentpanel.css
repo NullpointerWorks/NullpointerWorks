@@ -32,7 +32,6 @@ img.icon
 .header
 {
 	padding: 30px 0px 30px 0px;
-
 	/* font code */
 	font-family: consolas;
 	font-size: 3em;
@@ -44,7 +43,7 @@ img.icon
 	/* center content */
 	display: table;
   	margin: 0 auto;
-	width: 80%;
+	width: 90%;
 }
 
 .panel

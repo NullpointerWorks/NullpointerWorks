@@ -22,7 +22,6 @@ div
 {
 	display: inline-block;
 	vertical-align: top;
-
 	background-color: #f0f0f0;
 	width: 285px;
 	height: 100vh; /* 100% viewport height */
@@ -32,7 +31,6 @@ div
 {
 	display: inline-block;
 	vertical-align: top;
-
 	position: relative;
 	width: calc(100% - 289px);
 	height: 100px;
