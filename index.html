@@ -16,26 +16,26 @@
 		<!-- menu code -->
 		<div class="menu">
 			<!-- logo + accordion menu -->
-			<div class="logo" onclick="setIframeSrc('sub/home/home.html', undefined);" >
+			<div class="logo" onclick="openSrc('sub/home/home.html', undefined);" >
 				<div class="triangle"></div>
 			</div>
 			<!-- navigation bar -->
 			<div id='cssmenu'>
 				<ul>
-					<li><a href='#'>Tutorials</a></li>
-					<li><a href='#'>API Reference</a></li>
 					<li><a href='#'>Downloads</a></li>
+					<li><a href='#'>Tutorials</a></li>
+					<li><a href='docs/home.html' target="blank">API Reference</a></li>
 					<li class='has-sub'>
 						<a href='#'>Projects</a>
 						<ul>
-							<li><a href='#' onclick="setIframeSrc('', '');">libNPW</a></li>
+							<li><a href='#' onclick="openSrc('', '');">libNPW</a></li>
 						</ul>
 					</li>
 					<li class='has-sub'>
 						<a href=''>Demos</a>
 						<ul>
-							<li><a href='#' onclick="setIframeSrc('sub/demo/mode7/mode7.html', 'Mode 7');">Mode 7</a></li>
-							<li><a href='#' onclick="setIframeSrc('sub/demo/astar/astar.html', 'A* path finding');">A* pathfinding</a></li>
+							<li><a href='#' onclick="openSrc('sub/demo/mode7/mode7.html', 'Mode 7');">Mode 7</a></li>
+							<li><a href='#' onclick="openSrc('sub/demo/astar/astar.html', 'A* path finding');">A* pathfinding</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -51,7 +51,7 @@
 <script src="js/string.js" type="text/javascript"></script>
 <script src="js/menu.js" type="text/javascript"></script>
 <script>
-	function setIframeSrc(url, title)
+	function openSrc(url, title)
 	{
 	    document.getElementById('contentiframe').src = url;
 	    if (title != undefined)
@@ -61,7 +61,7 @@
 	}
 	window.onload = function()
 	{
-		setIframeSrc('sub/home/home.html', undefined);
+		openSrc('sub/home/home.html', undefined);
 	}
 </script>
 </html>
