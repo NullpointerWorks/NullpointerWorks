@@ -9,41 +9,30 @@
 	<meta name="author" content="Nullpointer"/>
  	<link rel="icon" href="img/favicon.gif"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iframe.css"/>
 	<link rel="stylesheet" type="text/css" href="css/menu.css"/>
 </head>
 <body>
-	<div id="main">
-		<!-- menu code -->
-		<div class="menu">
-			<!-- logo + accordion menu -->
+	<div class="main">
+		<!-- side bar code -->
+		<div class="menupane">
+			<!-- logo/home -->
 			<div class="logo" onclick="openSrc('sub/home/home.html', undefined);" >
 				<div class="triangle"></div>
 			</div>
-			<!-- navigation bar -->
-			<div id='cssmenu'>
-				<ul>
-					<li><a href='#'>Downloads</a></li>
-					<li><a href='#'>Tutorials</a></li>
-					<li><a href='https://nullpointerworks.github.io/npwdocs/index.html' target="blank">API Reference</a></li>
-					<li class='has-sub'>
-						<a href='#'>Projects</a>
-						<ul>
-							<li><a href='#' onclick="openSrc('', '');">libNPW</a></li>
-						</ul>
-					</li>
-					<li class='has-sub'>
-						<a href=''>Demos</a>
-						<ul>
-							<li><a href='#' onclick="openSrc('sub/demo/mode7/mode7.html', 'Mode 7');">Mode 7</a></li>
-							<li><a href='#' onclick="openSrc('sub/demo/astar/astar.html', 'A* path finding');">A* pathfinding</a></li>
-						</ul>
-					</li>
-				</ul>
+			<!-- navigation -->
+			<div class='cssmenu'>
+				API Reference<br/>
+				<a href='#' onclick="openSrc('https://nullpointerworks.github.io/NullpointerWorksAPI/core/module-core.html', 'Module Core');">core</a><br/>
+				<a href='#' onclick="openSrc('', 'Module Game');">game</a><br/>
+				<a href='#' onclick="openSrc('', 'Module Math');">math</a><br/>
+				<a href='#' onclick="openSrc('', 'Module Util');">util</a><br/>
+				<a href='#' onclick="openSrc('', 'Module Color');">color</a><br/>
 			</div>
 		</div>
-		<!-- content pane -->
-		<div class="content">
-			<iframe id="contentiframe" class="iframe"></iframe>
+		<!-- iframe content pane -->
+		<div class="iframepane">
+			<iframe class="iframe" id="contentiframe"></iframe>
 		</div>
 	</div>
 </body>
