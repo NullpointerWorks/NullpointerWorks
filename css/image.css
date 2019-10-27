@@ -1,0 +1,12 @@
+img
+{
+	width: 100%; /* auto resize */
+    height: auto;
+}
+.icon10
+{
+	position: relative;
+	top: 5px;
+	width: 20px;
+	padding-right: 5px;
+}
