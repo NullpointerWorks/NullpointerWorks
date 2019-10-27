@@ -11,38 +11,47 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
 <body>
-	<div class="main">
-		<!-- side bar code -->
-		<div class="menupane noselect">
-			<!-- logo/home -->
-			<div class="logo" onclick="openSrc('sub/home/home.html', undefined);">
-				<img src="img/nullstar-logo.gif"></img>
+	<!-- side bar code -->
+	<div class="menupane noselect">
+		<!-- logo/home -->
+		<div class="logo" onclick="openSrc('sub/home/home.html', undefined);">
+			<img src="img/nullstar-logo.gif"></img>
+		</div>
+		<!-- navigation -->
+		<div class='menu'>
+			<!-- api -->
+			<div class="menuspacer menuheader">Libraries</div>
+			<div class="menuitems">
+				<a href='#' onclick="openAPI('core/module-core.html', 'Module Core');">core</a><br/>
+				<a href='#' onclick="openAPI('', 'Module Game');">game</a><br/>
+				<a href='#' onclick="openAPI('', 'Module Math');">math</a><br/>
+				<a href='#' onclick="openAPI('', 'Module Util');">util</a><br/>
+				<a href='#' onclick="openAPI('', 'Module Color');">color</a><br/>
 			</div>
-			<!-- navigation -->
-			<div class='menu'>
-				<div class="menuspacer menuheader">API Reference</div>
-				<div class="menuitems">
-					<a href='#' onclick="openSrc('https://nullpointerworks.github.io/NullpointerWorksAPI/core/module-core.html', 'Module Core');">core library</a><br/>
-					<a href='#' onclick="openSrc('', 'Module Game');">game library</a><br/>
-					<a href='#' onclick="openSrc('', 'Module Math');">math library</a><br/>
-					<a href='#' onclick="openSrc('', 'Module Util');">util library</a><br/>
-					<a href='#' onclick="openSrc('', 'Module Color');">color library</a><br/>
-				</div>
-				<div class="menuspacer menuheader">Links</div>
-				<div class="menuitems">
-					<a href='#' onclick="">about</a><br/>
-				</div>
+			<!-- tuts -->
+			<div class="menuspacer menuheader">Tutorials</div>
+			<div class="menuitems">
+				<a href='#' onclick="">&lt;under construction&gt;</a><br/>
+			</div>
+			<!-- projects -->
+			<div class="menuspacer menuheader">Projects</div>
+			<div class="menuitems">
+				<a href='#' onclick="">&lt;under construction&gt;</a><br/>
+			</div>
+			<!-- links -->
+			<div class="menuspacer menuheader">Links</div>
+			<div class="menuitems">
+				<a href='#' onclick="">about</a><br/>
 			</div>
 		</div>
-		<!-- iframe content pane -->
-		<div class="iframepane">
-			<iframe class="iframe" id="contentiframe"></iframe>
-		</div>
+	</div>
+	<!-- iframe content pane -->
+	<div class="iframepane">
+		<iframe class="petrol iframe" id="contentiframe"></iframe>
 	</div>
 </body>
 <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="js/string.js" type="text/javascript"></script>
-<script src="js/menu.js" type="text/javascript"></script>
 <script>
 	function openSrc(url, title)
 	{
@@ -51,6 +60,10 @@
 	    	document.title = title + " - Nullpointer Works";
 	    else
 	    	document.title = "Nullpointer Works";
+	}
+	function openAPI(url, title)
+	{
+	    openSrc("https://nullpointerworks.github.io/NullpointerWorksAPI/"+url, title);
 	}
 	window.onload = function()
 	{
