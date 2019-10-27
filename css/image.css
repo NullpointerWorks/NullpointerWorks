@@ -10,3 +10,8 @@ img
 	width: 20px;
 	padding-right: 5px;
 }
+.logo
+{
+  	width: 300px;
+  	cursor: pointer;
+}

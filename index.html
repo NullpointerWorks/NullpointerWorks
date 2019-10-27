@@ -3,7 +3,7 @@
 <head>
 	<title>Nullpointer Works</title>
  	<meta charset="utf-8"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
  	<meta name="description" content="Nullpointer Works project page"/>
 	<meta name="keywords" content="java,game,app,null*,nullpointer,works,nullpointerworks"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -13,14 +13,10 @@
 	<link rel="stylesheet" type="text/css" href="css/image.css"/>
 </head>
 <body>
-	<!-- side bar code -->
-	<div class="menupane noselect">
-		<!-- logo/home -->
-		<div class="logo" onclick="openSrc('sub/home/home.html', undefined);">
-			<img src="img/nullstar-logo.gif"></img>
-		</div>
+	<div class="row">
 		<!-- navigation -->
-		<div class='menu'>
+		<div class="menucolumn noselect">
+			<img src="img/nullstar-logo.gif" class="logo"></img>
 			<!-- projects -->
 			<div class="menuspacer menuheader">Projects</div>
 			<div class="menuitems">
@@ -45,7 +41,7 @@
 			<div class="menuitems">
 				<a href="https://www.minds.com/NullpointerWorks" target="_blank">
 					<img src="img/icons/minds.gif" class="icon10">Minds</a><br/>
-				<a onclick="mailto();">
+				<a onclick="obfuscator();">
 					<img src="img/icons/email.gif" class="icon10">Email</a><br/>
 				<a href="https://github.com/NullpointerWorks" target="_blank">
 					<img src="img/icons/github.gif" class="icon10">GitHub</a><br/>
@@ -55,27 +51,27 @@
 					<img src="img/icons/twitch.gif" class="icon10">Twitch</a><br/>
 			</div>
 		</div>
-	</div>
-	<!-- iframe content pane -->
-	<div class="iframepane">
-		<iframe class="petrol iframe" id="contentiframe"></iframe>
+		<!-- iframe -->
+		<div class="framecolumn">
+			<iframe class="petrol iframe" id="contentiframe"></iframe>
+		</div>
 	</div>
 </body>
 <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
-	function mailto()
+	function obfuscator()
 	{
-		var s="ovmmqpjoufsxpsltApvumppl/dpn";
+		var s="nbjmup;ovmmqpjoufsxpsltApvumppl/dpn";
 		var m=""; 
 		for (i=0; i<s.length; i++) 
-		{	
-			if (s.charCodeAt(i) == 28){m+= '&';} 
-			else if (s.charCodeAt(i) == 23) {m+= '!';} 
+		{
+			if (s.charCodeAt(i) == 28){m+= '&';}
+			else if (s.charCodeAt(i) == 23) {m+= '!';}
 			else {m+=String.fromCharCode(s.charCodeAt(i)-1);}
 		}
-		var mail = document.createElement("a");
-		mail.href = "mailto:"+m;
-		mail.click();
+		var to = document.createElement("a");
+		to.href = m;
+		to.click();
 	}
 	function openSrc(url, title)
 	{
