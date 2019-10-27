@@ -9,25 +9,29 @@
 	<meta name="author" content="Nullpointer"/>
  	<link rel="icon" href="img/favicon.gif"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
-	<link rel="stylesheet" type="text/css" href="css/iframe.css"/>
-	<link rel="stylesheet" type="text/css" href="css/menu.css"/>
 </head>
 <body>
 	<div class="main">
 		<!-- side bar code -->
-		<div class="menupane">
+		<div class="menupane noselect">
 			<!-- logo/home -->
 			<div class="logo" onclick="openSrc('sub/home/home.html', undefined);">
 				<img src="img/nullstar-logo.gif"></img>
 			</div>
 			<!-- navigation -->
-			<div class='cssmenu'>
-				API Reference<br/>
-				<a href='#' onclick="openSrc('https://nullpointerworks.github.io/NullpointerWorksAPI/core/module-core.html', 'Module Core');">core</a><br/>
-				<a href='#' onclick="openSrc('', 'Module Game');">game</a><br/>
-				<a href='#' onclick="openSrc('', 'Module Math');">math</a><br/>
-				<a href='#' onclick="openSrc('', 'Module Util');">util</a><br/>
-				<a href='#' onclick="openSrc('', 'Module Color');">color</a><br/>
+			<div class='menu'>
+				<div class="menuspacer menuheader">API Reference</div>
+				<div class="menuitems">
+					<a href='#' onclick="openSrc('https://nullpointerworks.github.io/NullpointerWorksAPI/core/module-core.html', 'Module Core');">core library</a><br/>
+					<a href='#' onclick="openSrc('', 'Module Game');">game library</a><br/>
+					<a href='#' onclick="openSrc('', 'Module Math');">math library</a><br/>
+					<a href='#' onclick="openSrc('', 'Module Util');">util library</a><br/>
+					<a href='#' onclick="openSrc('', 'Module Color');">color library</a><br/>
+				</div>
+				<div class="menuspacer menuheader">Links</div>
+				<div class="menuitems">
+					<a href='#' onclick="">about</a><br/>
+				</div>
 			</div>
 		</div>
 		<!-- iframe content pane -->

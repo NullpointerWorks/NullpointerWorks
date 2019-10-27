@@ -5,15 +5,41 @@ body
 	background-color: #003232; /* IOM app console color */
 }
 
-/* logo home button */
-.logo
+a
 {
-  	position: relative;
-  	width: 300px;
-  	cursor: pointer;
+	text-decoration: none;
 }
 
-/*  */
+.noselect 
+{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* iframe style */
+.iframepane
+{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: calc(100% - 289px);
+}
+
+.iframe
+{
+	border: solid 0px #000;
+	background-color: #000;
+	display: block;
+	width: 100%;
+	height: 100vh;
+}
+
+/* main body div */
 .main
 {
 	padding: 0px;
@@ -28,11 +54,34 @@ body
 	width: 285px;
 	height: 100vh; /* 100% viewport height */
 }
-
-.cssmenu
+.logo
 {
-	top: -80px;
+  	position: relative;
+  	width: 300px;
+  	cursor: pointer;
+}
+
+/* menu code */
+.menu
+{
   	width: 100%;
-  	font-family: consolas;
   	color: #000;
+  	font-family: consolas;
+}
+
+.menuheader
+{
+	font-size: 1.4em;
+	padding-left: 15px;
+}
+
+.menuitems
+{
+	font-size: 1.1em;
+	padding-left: 30px;
+}
+
+.menuspacer
+{
+	padding-top: 10px;
 }
