@@ -3,12 +3,14 @@
 <head>
 	<title>Nullpointer Works</title>
  	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  	<meta name="description" content="Nullpointer Works project page"/>
 	<meta name="keywords" content="java,game,app,null*,nullpointer,works,nullpointerworks"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta name="author" content="Nullpointer"/>
  	<link rel="icon" href="img/favicon.gif"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/image.css"/>
 </head>
 <body>
 	<!-- side bar code -->
@@ -19,6 +21,16 @@
 		</div>
 		<!-- navigation -->
 		<div class='menu'>
+			<!-- projects -->
+			<div class="menuspacer menuheader">Projects</div>
+			<div class="menuitems">
+				<a href='#' onclick="">&lt;under construction&gt;</a><br/>
+			</div>
+			<!-- tuts -->
+			<div class="menuspacer menuheader">Tutorials</div>
+			<div class="menuitems">
+				<a href='#' onclick="">&lt;under construction&gt;</a><br/>
+			</div>
 			<!-- api -->
 			<div class="menuspacer menuheader">Libraries</div>
 			<div class="menuitems">
@@ -28,20 +40,19 @@
 				<a href='#' onclick="openAPI('', 'Module Util');">util</a><br/>
 				<a href='#' onclick="openAPI('', 'Module Color');">color</a><br/>
 			</div>
-			<!-- tuts -->
-			<div class="menuspacer menuheader">Tutorials</div>
-			<div class="menuitems">
-				<a href='#' onclick="">&lt;under construction&gt;</a><br/>
-			</div>
-			<!-- projects -->
-			<div class="menuspacer menuheader">Projects</div>
-			<div class="menuitems">
-				<a href='#' onclick="">&lt;under construction&gt;</a><br/>
-			</div>
 			<!-- links -->
 			<div class="menuspacer menuheader">Links</div>
 			<div class="menuitems">
-				<a href='#' onclick="">about</a><br/>
+				<a href="https://www.minds.com/NullpointerWorks" target="_blank">
+					<img src="img/icons/minds.gif" class="icon10">Minds</a><br/>
+				<a onclick="mailto();">
+					<img src="img/icons/email.gif" class="icon10">Email</a><br/>
+				<a href="https://github.com/NullpointerWorks" target="_blank">
+					<img src="img/icons/github.gif" class="icon10">GitHub</a><br/>
+				<a href="https://www.patreon.com/nullpointerworks" target="_blank">
+					<img src="img/icons/patreon.gif" class="icon10">Patreon</a><br/>
+				<a href="https://www.twitch.tv/nullpointerworks" target="_blank">
+					<img src="img/icons/twitch.gif" class="icon10">Twitch</a><br/>
 			</div>
 		</div>
 	</div>
@@ -51,8 +62,21 @@
 	</div>
 </body>
 <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="js/string.js" type="text/javascript"></script>
 <script>
+	function mailto()
+	{
+		var s="ovmmqpjoufsxpsltApvumppl/dpn";
+		var m=""; 
+		for (i=0; i<s.length; i++) 
+		{	
+			if (s.charCodeAt(i) == 28){m+= '&';} 
+			else if (s.charCodeAt(i) == 23) {m+= '!';} 
+			else {m+=String.fromCharCode(s.charCodeAt(i)-1);}
+		}
+		var mail = document.createElement("a");
+		mail.href = "mailto:"+m;
+		mail.click();
+	}
 	function openSrc(url, title)
 	{
 	    document.getElementById('contentiframe').src = url;
