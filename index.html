@@ -4,64 +4,29 @@
 	<title>Nullpointer Works</title>
  	<meta charset="utf-8"/>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
- 	<meta name="description" content="Nullpointer Works project page"/>
-	<meta name="keywords" content="java,game,app,null*,nullpointer,works,nullpointerworks"/>
+ 	<meta name="description" content="Nullpointer Works Portfolio Intro"/>
+	<meta name="keywords" content="portfolio,null*,nullpointer,works,nullpointerworks"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="author" content="Nullpointer"/>
+	<meta name="author" content="Michiel Drost"/>
  	<link rel="icon" href="img/favicon.gif"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	<link rel="stylesheet" type="text/css" href="css/image.css"/>
 </head>
 <body>
-	<div class="row">
-		<!-- navigation -->
-		<div class="menucolumn noselect">
-			<a href="" onclick="openSrc('sub/home/home.html', undefined);" target="_self">
-				<img src="img/nullstar-logo.gif" class="logo"></img>
-			</a>
-			
-			
-			
-			
-			
-		</div>
-		<!-- iframe -->
-		<div class="framecolumn">
-			<iframe class="petrol iframe" id="contentiframe"></iframe>
-		</div>
+	<div class="split left">
+		
+		
+		
 	</div>
+	
+	<div class="split right">
+		
+		
+		
+		
+	</div>
+	
+	
 </body>
 <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script>
-	function obfuscator()
-	{
-		var s="nbjmup;ovmmqpjoufsxpsltApvumppl/dpn";
-		var m=""; 
-		for (i=0; i<s.length; i++) 
-		{
-			if (s.charCodeAt(i) == 28){m+= '&';}
-			else if (s.charCodeAt(i) == 23) {m+= '!';}
-			else {m+=String.fromCharCode(s.charCodeAt(i)-1);}
-		}
-		var to = document.createElement("a");
-		to.href = m;
-		to.click();
-	}
-	function openSrc(url, title)
-	{
-	    document.getElementById('contentiframe').src = url;
-	    if (title != undefined)
-	    	document.title = title + " - Nullpointer Works";
-	    else
-	    	document.title = "Nullpointer Works";
-	}
-	function openAPI(url, title)
-	{
-	    openSrc("https://nullpointerworks.github.io/NullpointerWorksAPI/"+url, title);
-	}
-	window.onload = function()
-	{
-		openSrc('sub/home/home.html', undefined);
-	}
-</script>
 </html>
