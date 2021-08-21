@@ -11,20 +11,7 @@ html, body
 	height: 100%;
 	width: 100%;
 }
-/* colors */
-.c_gray, body
-{
-	background-color: #f0f0f0;
-}
-.c_petrol
-{
-	background-color: #003232;
-}
-.c_anthracite
-{
-	background-color: #1c1f22;
-}
-/* div page layout */
+/* page layout */
 div.split
 {
 	display: flex;
@@ -32,12 +19,14 @@ div.split
 div.left
 {
 	flex-grow: 1;
+	width: 40%;
 }
 div.right
 {
 	flex-grow: 1;
+	width: 60%;
 }
-div.layer1
+div.upper
 {
 	clear: both;
 	position: fixed;
@@ -45,7 +34,7 @@ div.layer1
 	height: 60%;
 	width: 100%;
 }
-div.layer2
+div.lower
 {
 	clear: both;
 	position: fixed;
@@ -53,7 +42,7 @@ div.layer2
 	height: 40%;
 	width: 100%;
 }
-/*  */
+/* page overlay */
 div.skew
 {
     top: -300px;
@@ -62,4 +51,3 @@ div.skew
     bottom: 0;
 	transform: skewY(-11deg);
 }
-
