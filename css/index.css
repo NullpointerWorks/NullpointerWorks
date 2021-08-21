@@ -8,23 +8,37 @@ html, body
 {
 	height: 100%;
 }
+/* colors */
+.c_gray
+{
+	background-color: #f0f0f0;
+}
+.c_petrol
+{
+	background-color: #003232;
+}
+.c_anthracite
+{
+	background-color: #1c1f22;
+}
 /* div page layout */
-div.top
+div.layer1
 {
 	clear: both;
 	position: fixed;
 	top: 0;
-	height: 70%;
+	height: 60%;
 	width: 100%;
 }
-div.bottom
+div.layer2
 {
 	clear: both;
 	position: fixed;
 	bottom: 0;
-	height: 30%;
+	height: 40%;
 	width: 100%;
 }
+/*  */
 div.split
 {
 	display: flex;
@@ -33,12 +47,10 @@ div.split
 div.left
 {
 	flex-grow: 1;
-	color: #fff;
 }
 div.right
 {
 	flex-grow: 1;
-	color: #fff;
 }
 /*  */
 div.greeting
