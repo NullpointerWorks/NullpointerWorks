@@ -2,14 +2,17 @@ html, body
 {
 	padding: 0px;
 	margin: 0px;
-	height: 100%;
 }
 .viewport
 {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 100%;
+	width: 100%;
 }
 /* colors */
-.c_gray
+.c_gray, body
 {
 	background-color: #f0f0f0;
 }
@@ -22,6 +25,18 @@ html, body
 	background-color: #1c1f22;
 }
 /* div page layout */
+div.split
+{
+	display: flex;
+}
+div.left
+{
+	flex-grow: 1;
+}
+div.right
+{
+	flex-grow: 1;
+}
 div.layer1
 {
 	clear: both;
@@ -39,22 +54,12 @@ div.layer2
 	width: 100%;
 }
 /*  */
-div.split
+div.skew
 {
-	display: flex;
-	padding: 0;
+    top: -300px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+	transform: skewY(-11deg);
 }
-div.left
-{
-	flex-grow: 1;
-}
-div.right
-{
-	flex-grow: 1;
-}
-/*  */
-div.greeting
-{
-	font-family: consolas;
-	font-size: 18pt;
-}
+
