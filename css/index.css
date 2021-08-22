@@ -3,6 +3,16 @@ html, body
 	padding: 0px;
 	margin: 0px;
 }
+.page
+{
+	position: relative;
+	border: 0 solid #f00;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1024px;
+	height: 100vh;
+}
 .viewport
 {
 	position: absolute;
