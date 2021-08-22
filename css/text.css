@@ -1,0 +1,23 @@
+.slogan
+{
+	position: relative;
+	top: 200px;
+	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+	width: 350px;
+	
+	font-family: Consolas;
+	font-size: 18pt;
+	font-style: italic;
+}
+.txt_dark
+{
+	color: #1c1f22;
+}
+.txt_light
+{
+	color: #fff;
+}

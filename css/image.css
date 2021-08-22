@@ -32,8 +32,8 @@ img.autoresize
 	width: 100%; /* auto resize */
     height: auto;
 }
-
-img.portrait
+.portrait
 {
-	margin-top: 100px;
+	position: relative;
+	top:100px;
 }

@@ -1,0 +1,34 @@
+/* page layout */
+div.split
+{
+	display: flex;
+}
+div.left
+{
+	flex-grow: 1;
+	width: 35%;
+}
+div.right
+{
+	flex-grow: 1;
+	width: 65%;
+}
+/* page overlay */
+div.skew
+{
+    top: -550px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+	transform: skewY(-11deg);
+}
+div.upper 
+{
+	top: 0;
+	height: 60%;
+}
+div.lower 
+{
+	bottom: 0;
+	height: 40%;
+}
