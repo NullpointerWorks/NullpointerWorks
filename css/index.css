@@ -21,3 +21,9 @@ html, body
 	height: 100%;
 	width: 100%;
 }
+div.link
+{
+	padding-bottom: 20px;
+	text-align: right;
+	width: 100%;
+}

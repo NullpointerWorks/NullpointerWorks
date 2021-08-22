@@ -10,6 +10,11 @@
   	width: 300px;
   	cursor: pointer;
 }
+.portrait
+{
+	position: relative;
+	top:100px;
+}
 img.rounded
 {
 	border-color: #f0f0f0;
@@ -32,13 +37,9 @@ img.autoresize
 	width: 100%; /* auto resize */
     height: auto;
 }
-.portrait
-{
-	position: relative;
-	top:100px;
-}
 img.linkbtn
 {
 	width: 50px;
 	height: 50px;
+	vertical-align: middle;
 }

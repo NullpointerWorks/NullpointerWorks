@@ -21,3 +21,11 @@
 {
 	color: #fff;
 }
+a.txt_link
+{
+	text-decoration: none;
+	vertical-align: middle;
+	color: #fff;
+	font-family: consolas;
+	font-size: 25px;
+}
