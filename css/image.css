@@ -12,8 +12,8 @@
 }
 img.rounded
 {
-	border-color: #fff;
-	border-width: 10px;
+	border-color: #f0f0f0;
+	border-width: 20px;
 	border-image: none;
 	border-radius: 50%;
 	border-style: solid;
@@ -31,4 +31,9 @@ img.autoresize
 {
 	width: 100%; /* auto resize */
     height: auto;
+}
+
+img.portrait
+{
+	margin-top: 100px;
 }

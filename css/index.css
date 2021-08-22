@@ -11,6 +11,7 @@ html, body
 	height: 100%;
 	width: 100%;
 }
+
 /* page layout */
 div.split
 {
@@ -42,10 +43,11 @@ div.lower
 	height: 40%;
 	width: 100%;
 }
+
 /* page overlay */
 div.skew
 {
-    top: -300px;
+    top: -500px;
     right: 0;
     left: 0;
     bottom: 0;
