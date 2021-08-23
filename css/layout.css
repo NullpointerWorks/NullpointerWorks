@@ -22,9 +22,9 @@ div.skew
 div.upper 
 {
 	top: 0;
-	height: 500px;
+	height: 600px;
 }
 div.lower 
 {
-	top: 500px;
+	top: 600px;
 }
