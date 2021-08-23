@@ -16,8 +16,9 @@ div.right
 /* page overlay */
 div.skew
 {
+	top: -100px;
 	transform: skewY(-12deg);
-	height: 400px;
+	height: 500px;
 }
 div.upper 
 {
