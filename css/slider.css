@@ -4,7 +4,6 @@ a{text-decoration:none;	color:#666;}
 a:hover{color:#1bc1a3;}
 body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
 
-
 #wrapper{
 	width:600px;
 	margin:50px auto;
@@ -19,6 +18,7 @@ body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
 	height:400px;
 	position:relative;
 	overflow:hidden;
+	margin: auto; /* edit: centers the slideshow */
 }
 
 #slider-wrap ul#slider{
@@ -130,8 +130,6 @@ body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
 	opacity:0.5;
 	position:relative;
   top:0;
-  
-  
 }
 
 #pagination-wrap ul li.active{
@@ -142,16 +140,10 @@ body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
 	box-shadow:rgba(0,0,0,0.1) 1px 1px 0px;	
 }
 
-
-
-
 /*Header*/
 h1, h2{text-shadow:none; text-align:center;}
 h1{	color: #666; text-transform:uppercase;	font-size:36px;}
 h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; margin-bottom:30px;} 
-
-
-
 
 /*ANIMATION*/
 #slider-wrap ul, #pagination-wrap ul li{
@@ -161,7 +153,3 @@ h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; marg
 	-ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
 	transition: all 0.3s cubic-bezier(1,.01,.32,1);	
 }
-
-
-
-
