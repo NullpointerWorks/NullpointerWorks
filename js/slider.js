@@ -1,3 +1,5 @@
+/* Credits to André Cortellini - http://www.andrecortellini.com */
+
 //current position
 var pos = 0;
 //number of slides
@@ -5,10 +7,8 @@ var totalSlides = $('#slider-wrap ul li').length;
 //get the slide width
 var sliderWidth = $('#slider-wrap').width();
 
-
-$(document).ready(function(){
-	
-	
+$(document).ready(function()
+{
 	/*****************
 	 BUILD THE SLIDER
 	*****************/
@@ -24,8 +24,6 @@ $(document).ready(function(){
 	$('#previous').click(function(){
 		slideLeft();
 	});
-	
-	
 	
 	/*************************
 	 //*> OPTIONAL SETTINGS
@@ -57,11 +55,7 @@ $(document).ready(function(){
 	  function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
 	);
 	
-	
-
 });//DOCUMENT READY
-	
-
 
 /***********
  SLIDE LEFT
@@ -76,7 +70,6 @@ function slideLeft(){
 	pagination();
 }
 
-
 /************
  SLIDE RIGHT
 *************/
@@ -90,9 +83,6 @@ function slideRight(){
 	pagination();
 }
 
-
-
-	
 /************************
  //*> OPTIONAL SETTINGS
 ************************/
@@ -104,5 +94,3 @@ function pagination(){
 	$('#pagination-wrap ul li').removeClass('active');
 	$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
 }
-		
-	
