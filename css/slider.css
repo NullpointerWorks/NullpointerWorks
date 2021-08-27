@@ -93,7 +93,7 @@ body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
 }
 
 #next{right:-50px; border-radius:7px 0px 0px 7px;}
-#previous{left:-50px; border-radius:0px 7px 7px 7px;}
+#previous{left:-50px; border-radius:0px 7px 7px 0px;}
 #counter{
 	top: 30px; 
 	right:35px; 
