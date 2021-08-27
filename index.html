@@ -8,7 +8,6 @@
 		<meta name="keywords" content="portfolio,null*,nullpointer,works,nullpointerworks"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta name="author" content="Michiel Drost"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<link rel="icon" href="img/favicon.gif"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="css/layout.css"/>
@@ -16,8 +15,6 @@
 		<link rel="stylesheet" type="text/css" href="css/text.css"/>
 		<link rel="stylesheet" type="text/css" href="css/colors.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/googleapis/anton.css"/>
-		<link rel="stylesheet" type="text/css" href="css/googleapis/neucha.css"/>
 		<link rel="stylesheet" type="text/css" href="css/slider.css"/>
 	</head>
 	<body>
@@ -65,10 +62,9 @@
 						<!-- Credits to André Cortellini - http://www.andrecortellini.com -->
 						<div id="slider-wrap">
 							<ul id="slider">
-								<li data-color="#1abc9c">
+								<li style="cursor: pointer;" onclick="openURL('');">
 									<div>
-										<h3>Slide #1</h3>
-										<span>Sub-title #1</span>
+										<h3>ARGB Controller</h3>
 									</div>                
 									<img style="width: 100%;" src="" />
 								</li>
@@ -78,7 +74,6 @@
 							<div id="counter"></div>
 							<div id="pagination-wrap"><ul></ul></div> 
 						</div>
-						
 					</div>
 				</div>
 			</div>
@@ -100,6 +95,10 @@
 			var to = document.createElement("a");
 			to.href = m;
 			to.click();
+		}
+		function openURL(url)
+		{
+			window.open(url, '_blank');
 		}
 	</script>
 </html>
