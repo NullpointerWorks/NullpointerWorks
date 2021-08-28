@@ -29,3 +29,11 @@ a.txt_link
 	font-family: consolas;
 	font-size: 25px;
 }
+.copynotice
+{
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	font-family: Consolas;
+	font-size: 10pt;
+}
