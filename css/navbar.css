@@ -12,6 +12,7 @@
 {
 	width: 100%;
 	height: calc(100% - 10px);
+	padding: 10px 0px 10px 0px;
 }
 .navbar_shade
 {
@@ -22,26 +23,20 @@
 .navbar_offset
 {
 	width: 100%;
-	height: 100px;
+	height: 110px;
 }
 
 /* navigation bar items */
 .navbar_item
 {
+	vertical-align: top;
 	display: inline-block;
+	background-color: #f00;
+	
 	width: 160px;
 	height: 80px;
 	margin-right:50px;
-	background-color: #f00;
-			transition: height 0.1s;
+	
+			transition: height 0.1s; /* aids javascript resizing */
 	-webkit-transition: height 0.1s;
-}
-.navbar_item.expandable
-{
-			transition: height 0.1s;
-	-webkit-transition: height 0.1s;
-}
-.navbar_item.expandable:hover
-{
-	height: 300px;
 }
