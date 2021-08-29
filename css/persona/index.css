@@ -13,3 +13,16 @@ html, body
 	width: 950px;
 	height: 100vh;
 }
+.viewport
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+div.link
+{
+	padding-bottom: 20px;
+	text-align: right;
+}

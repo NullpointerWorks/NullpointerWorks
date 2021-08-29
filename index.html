@@ -5,86 +5,18 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Nullpointer Works Portfolio Intro"/>
-		<meta name="keywords" content="portfolio,null*,nullpointer,works,nullpointerworks"/>
+		<meta name="keywords" content="null*,nullpointer,works,nullpointerworks"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta name="author" content="Michiel Drost"/>
 		<link rel="icon" href="img/favicon.gif"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
-		<link rel="stylesheet" type="text/css" href="css/layout.css"/>
-		<link rel="stylesheet" type="text/css" href="css/image.css"/>
-		<link rel="stylesheet" type="text/css" href="css/text.css"/>
 		<link rel="stylesheet" type="text/css" href="css/colors.css"/>
-		<link rel="stylesheet" type="text/css" href="css/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/slider.css"/>
 	</head>
 	<body>
 		<div class="page">
-			<div class="viewport split">
-				<div class="left c_anthracite"></div>
-				<div class="right c_petrol"></div>
-			</div>
-			<div class="viewport skew c_gray"></div>
-			<div class="viewport split" style="z-index: 1;">
-				<!-- left content -->
-				<div class="left">
-					<div class="upper">
-						<div class="slogan">"Software engineer by trade,<br>electrical engineer by aspiration."</div>
-					</div>
-					<div class="lower" style="margin-right: 20%;">
-						<div class="link">
-							<a href="https://www.linkedin.com/in/michiel-drost-3218a713a/" target="_blank" class="txt_link">
-								<span>LinkedIn</span>
-								<img src="img/linkedin-icon-100.svg" alt="LinkedIn" title="LinkedIn Page" class="linkbtn" />
-							</a>
-						</div>
-						<div class="link">
-							<a href="https://github.com/NullpointerWorks" target="_blank" class="txt_link">
-								<span>Github</span>
-								<img src="img/github-icon-100.svg" alt="Github" title="Github Repository" class="linkbtn" />
-							</a>
-						</div>
-						<div class="link">
-							<a onclick="obfuscator();" style="cursor: pointer;" class="txt_link">
-								<span>eMail</span>
-								<img src="img/email-icon-100.svg" alt="email" title="Drop me an eMail" class="linkbtn" />
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- right content -->
-				<div class="right">
-					<div class="upper">
-						<div class="portrait">
-							<img src="img/portrait.png" class="rounded centered"></img>
-						</div>
-					</div>
-					<div class="lower">
-						
-					</div>
-				</div>
-			</div>
+			
+			
+			
 		</div>
 	</body>
-	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="js/slider.js" type="text/javascript"></script>
-	<script>
-		function obfuscator()
-		{
-			var s="nbjmup;ovmmqpjoufsxpsltApvumppl/dpn";
-			var m=""; 
-			for (i=0; i<s.length; i++) 
-			{
-				if (s.charCodeAt(i) == 28){m+= '&';}
-				else if (s.charCodeAt(i) == 23) {m+= '!';}
-				else {m+=String.fromCharCode(s.charCodeAt(i)-1);}
-			}
-			var to = document.createElement("a");
-			to.href = m;
-			to.click();
-		}
-		function openURL(url)
-		{
-			window.open(url, '_blank');
-		}
-	</script>
 </html>

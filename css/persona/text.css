@@ -31,9 +31,11 @@ a.txt_link
 }
 .copynotice
 {
-	bottom: 0px;
-	width: 100%;
+	color: #adadac; 
+	position:absolute; 
+	top:0;
+	width:100%;
 	text-align: center;
-	font-family: Consolas;
-	font-size: 10pt;
+	font-family: consolas;
+	font-size: 13px;
 }
