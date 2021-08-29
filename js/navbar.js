@@ -1,15 +1,16 @@
 function resetRollOutAll()
 {
-	resetRollOut("btn");
+	resetRollOut("blue");
+	resetRollOut("green");
 }
 function resetRollOut(id)
 {
 	var element = document.getElementById( id );
-	element.style.height = "80px";
+	element.style.height = "0px";
 }
 function setRollOut(id)
 {
+	resetRollOutAll();
 	var element = document.getElementById( id );
-	element.style.height = "400px";
-	// causes a 0.1s transition to the new height due to css style
+	element.style.height = "300px"; // uses css transition effect
 }
