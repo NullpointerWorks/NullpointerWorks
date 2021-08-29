@@ -16,9 +16,9 @@
 	<body>
 		<div class="navbar">
 			<div class="navbar_header c_petrol" onmouseleave="resetRollOutAll();" >
-				<div class="navbar_item"></div>
-				<div class="navbar_item"></div>
-				<div class="navbar_item"></div>
+				<div class="navbar_item" onmouseover="resetRollOutAll();"></div>
+				<div class="navbar_item" onmouseover="resetRollOutAll();"></div>
+				<div class="navbar_item" onmouseover="resetRollOutAll();"></div>
 				<div class="navbar_item" id="btn" onmouseover="setRollOut('btn');"></div>
 			</div>
 			<div class="navbar_shade c_anthracite"></div>
@@ -61,18 +61,10 @@
 			var element = document.getElementById( id );
 			element.style.height = "80px";
 		}
-		
-		
-		
 		function setRollOut(id)
 		{
-			
 			var element = document.getElementById( id );
-			element.style.height = "300px"; // causes a 0.1s transition to the new height due to css style
-			
-			
-			
+			element.style.height = "400px"; // causes a 0.1s transition to the new height due to css style
 		}
-		
 	</script>
 </html>
