@@ -1,7 +1,6 @@
 function resetRollOutAll()
 {
 	resetRollOut("blue");
-	resetRollOut("green");
 }
 function resetRollOut(id)
 {

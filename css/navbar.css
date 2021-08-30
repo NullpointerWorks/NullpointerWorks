@@ -14,6 +14,17 @@
 	width: 100%;
 	height: calc(100% - 10px);
 	padding: 10px 0px 10px 0px;
+	
+	text-align: justify; /* spaces divs evenly. use with stretch class */
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+span.navbar_stretch 
+{
+	width: 100%;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
 }
 .navbar_shade
 {
@@ -29,14 +40,16 @@
 /* navigation bar items */
 .navbar_item
 {
-	vertical-align: top;
 	display: inline-block;
+	vertical-align: top;
 	background-color: #f00;
 	
 	margin: 0px 10px 0px 10px;
-	font-size: 10px;
+	font-size: 20px;
 	
-	width: 160px;
+	text-align: center;
+	
+	width: 180px;
 	height: 80px;
 }
 /* navigation content */
@@ -44,6 +57,6 @@
 {
 	width: 100%;
 	height: 0px;
-			transition: height 0.1s; /* aids javascript resizing */
+			transition: height 0.1s; /* smooths resizing */
 	-webkit-transition: height 0.1s;
 }
