@@ -42,15 +42,19 @@ span.navbar_stretch
 {
 	display: inline-block;
 	vertical-align: top;
-	background-color: #f00;
-	
 	margin: 0px 10px 0px 10px;
 	font-size: 20px;
-	
 	text-align: center;
-	
-	width: 180px;
 	height: 80px;
+}
+.navbar_logo
+{
+	width: 300px;
+}
+.navbar_btn
+{
+	width: 200px;
+	background-color: #f00;
 }
 /* navigation content */
 .navbar_content
@@ -59,4 +63,18 @@ span.navbar_stretch
 	height: 0px;
 			transition: height 0.1s; /* smooths resizing */
 	-webkit-transition: height 0.1s;
+}
+@media screen and (max-width: 1000px)
+{
+	.navbar_logo
+	{
+		display: block;
+	}
+}
+@media screen and (max-width: 620px)
+{
+	.navbar
+	{
+		display: none;
+	}
 }
