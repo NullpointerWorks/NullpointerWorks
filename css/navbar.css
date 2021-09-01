@@ -14,7 +14,7 @@
 	width: 100%;
 	height: calc(100% - 10px);
 	padding: 10px 0px 10px 0px;
-	
+	background-color: #003232;
 	text-align: justify; /* spaces divs evenly. use with stretch class */
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
@@ -35,28 +35,23 @@ span.navbar_stretch
 .navbar_offset
 {
 	width: 100%;
-	height: 120px;
+	height: 110px;
 }
 /* navigation bar items */
-.navbar_item, .navbar_btn, .navbar_logo, .navbar_spacer
+.navbar_item, .navbar_btn, .navbar_spacer
 {
 	display: inline-block;
-	vertical-align: top;
 	margin: 0px 5px 0px 5px;
-	font-size: 20px;
-	text-align: center;
 	height: 80px;
-}
-.navbar_logo
-{
-	width: 310px;
 }
 .navbar_btn
 {
+	vertical-align: top;
 	width: 180px;
 	color: #fff;
 	font-family: consolas;
-	background-color: #003232;
+	font-size: 20px;
+	text-align: center;
 }
 .navbar_spacer
 {
@@ -67,10 +62,11 @@ span.navbar_stretch
 {
 	width: 100%;
 	height: 0px;
+	background-color: #003232;
 			transition: height 0.1s; /* smooths resizing */
 	-webkit-transition: height 0.1s;
 }
-@media screen and (max-width: 1010px)
+@media screen and (max-width: 930px)
 {
 	.navbar_logo
 	{
