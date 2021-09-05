@@ -1,14 +1,32 @@
 html, body
 {
-	padding 0px;
-	margin 0px;
-	background-color: #fafafa;
+	padding: 0px;
+	margin: 0px;
+	background-color: #f0f0f0;
+}
+p
+{
+	font-family: Consolas;
 }
 .content
 {
 	width: 800px;
-	height: 100px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #fff;
 }
+.chapter
+{
+	font-family: Consolas;
+	font-size: 32px;
+	font-weight: bold;
+	
+	position:;
+	height: 60;
+}
+a.hlink
+{
+	text-decoration: none;
+	font-size: 48px;
+}
+
