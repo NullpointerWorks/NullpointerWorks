@@ -18,7 +18,7 @@ html, body
 .content p
 {
 	padding-left: 60px;
-	padding-right: 20px;
+	padding-right: 60px;
 }
 /* chapter header */
 .chapter
@@ -31,4 +31,14 @@ html, body
 {
 	position: relative;
 	left: -19px;
+}
+/*  */
+img.content_image
+{
+	width: 660px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 10px solid #ddd;
+	border-radius: 20px;
 }
