@@ -42,3 +42,10 @@ img.content_image
 	border: 10px solid #ddd;
 	border-radius: 20px;
 }
+/* code-segment style */
+div.codeblock
+{
+	margin: 10px 60px 10px 60px;
+	border: 10px solid #ddd;
+	border-radius: 20px;
+}
