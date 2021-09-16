@@ -45,6 +45,7 @@ img.content_image
 /* code-segment style */
 div.codeblock
 {
+	background-color: #1f1f1f;
 	margin: 10px 60px 10px 60px;
 	border: 10px solid #ddd;
 	border-radius: 20px;
