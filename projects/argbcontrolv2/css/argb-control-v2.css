@@ -6,11 +6,11 @@ html, body
 }
 div.title
 {
+	margin-top: 60px;
 	width: 100%;
 	text-align: center;
 	font-size: 48px;
 	font-weight: bold;
-	margin-top: 60px;
 }
 
 /* table of content */
@@ -56,7 +56,7 @@ div.toc a
 .content p
 {
 	margin: 0px;
-	padding: 10px 60px 10px 60px;
+	padding: 0px 60px 20px 60px;
 }
 
 /*  */
@@ -86,4 +86,24 @@ div.codeblock
 	margin: 10px 60px 10px 60px;
 	border: 10px solid #ddd;
 	border-radius: 20px;
+}
+
+/* footer information */
+.footer
+{
+	width: 100%;
+	height: 150px;
+	background-color: #1c1f22;
+	color: #fff;
+	font-family: Consolas, Arial;
+	font-size: 12px;
+}
+.copynotice
+{
+	color: #adadac; 
+	width:100%;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	font-family: consolas;
+	font-size: 13px;
 }
