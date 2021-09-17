@@ -16,7 +16,8 @@ div.title
 /* table of content */
 div.toc
 {
-	width: 400px;
+	width: 500px;
+	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -59,7 +60,7 @@ div.toc a
 }
 
 /*  */
-img.content_image
+img.image_pane
 {
 	width: 660px;
 	display: block;
@@ -67,6 +68,15 @@ img.content_image
 	margin-right: auto;
 	border: 10px solid #ddd;
 	border-radius: 20px;
+}
+.image_desc
+{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 12px;
+	font-style: italic;
 }
 
 /* code-segment style */
