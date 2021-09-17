@@ -4,6 +4,43 @@ html, body
 	margin: 0px;
 	background-color: #f0f0f0;
 }
+div.title
+{
+	width: 100%;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	margin-top: 60px;
+}
+
+/* table of content */
+div.toc
+{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+div.toc a
+{
+	color: #000;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+/* chapter header */
+.chapter
+{
+	margin: 50px 0px 0px 0px;
+	padding: 10px 60px 10px 40px;
+	font-size: 32px;
+	font-weight: bold;
+}
+.chapter a
+{
+	position: relative;
+	left: -19px;
+}
+
 /* content markup */
 .content
 {
@@ -20,18 +57,7 @@ html, body
 	margin: 0px;
 	padding: 10px 60px 10px 60px;
 }
-/* chapter header */
-.chapter
-{
-	padding: 10px 60px 10px 40px;
-	font-size: 32px;
-	font-weight: bold;
-}
-.chapter a
-{
-	position: relative;
-	left: -19px;
-}
+
 /*  */
 img.content_image
 {
@@ -42,6 +68,7 @@ img.content_image
 	border: 10px solid #ddd;
 	border-radius: 20px;
 }
+
 /* code-segment style */
 div.codeblock
 {
