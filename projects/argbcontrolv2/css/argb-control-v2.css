@@ -7,7 +7,7 @@ html, body
 div.parallax 
 {
 	background-image: url("../img/argb_controller_800.jpg");
-	min-height: 350px; 
+	min-height: 350px;
 	background-attachment: fixed;
 	background-position: 50% -5%;
 	background-repeat: no-repeat;
