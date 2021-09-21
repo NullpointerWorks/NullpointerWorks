@@ -13,24 +13,21 @@
 	</head>
 	<body>
 		<div class="content">
-			<div></div>
-			
 			<div class="title">ARGB Controller v2</div>
-			
-			<!--  -->
+			<!-- index -->
 			<div class="chapter">
 				<a id="table" href="#table"><img style="width: 20px;" /></a>Table of Content
 			</div>
 			<div class="toc">
 				<div><a href="#intro">Introduction</a></div>
+				<div><a href="#design">Design</a></div>
 				<div><a href="#schema">Schematic</a></div>
 				<div><a href="#assembly">Assembly</a></div>
 				<div><a href="#drawing">Drawing</a></div>
 				<div><a href="#code">Code</a></div>
 				<div><a href="#downloads">Downloads</a></div>
 			</div>
-			
-			<!--  -->
+			<!-- introduction -->
 			<div class="chapter">
 				<a id="intro" href="#intro"><img style="width: 20px;" src="img/star.svg" /></a>Introduction
 			</div>
@@ -43,28 +40,31 @@
 			car's performance and looks. When you search online for water-cooled PCs you find images of hard-tubing 
 			cooling systems with colorful coolant and lots of lighting and cable wiring matching the theme.</p>
 			<p>Mind you I'm not a hardcore PC tuner, but I do enjoy tinkering when I have the oppertunity. One of those 
-			opportunities had risen when I was building my new work PC. It has plenty room for eight fans and since 
+			opportunities had risen when I was building my new PC. It has plenty room for eight fans and since I
 			had some multicolor fans laying around, I thought it be fun to have those installed. Unfortunately, the 
 			orignal controller for these fans was lacking so I opted to create my own.</p>
 			<img class="image_pane" style="width:500px;" src="img/argb_fan_800.jpg"></img>
 			<div class="image_desc">A 120mm multicolor computer fan from Sharkoon. (not affiliated)</div>
-			
-			<!--  -->
+			<!-- reviewing my options -->
 			<div class="chapter">
-				<a id="schema" href="#schema"><img style="width: 20px;" src="img/star.svg" /></a>Schematic
+				<a id="design" href="#design"><img style="width: 20px;" src="img/star.svg" /></a>Design
 			</div>
-			<p></p>
+			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for 
+			controller addressable LEDs. Good stuff, since the LEDs inside the multicolor fans are addressable red-green-blue(RGB) 
+			LEDs. I'm not sure exactly which product series they used, but I suspect they are WS2812B. The WS2812 are a 
+			popular choice in RGB strips and are consealed in a reasonably sized 5050 package, and the lighitng inside 
+			the fan is just a circular glued LED strip.</p>
+			<p>The FastLED library allocates a single pin for sending data over to an addressable LED. All other LEDs on 
+			the strip have their data input daisy-chained together on the output of the previous. Only the first LED in 
+			the chain needs to be informed on what behaviour the others are to display.</p>
+			<p>The Arduino development platform utilize AVR microcontroller and among the most popular, the . Arduino has made development 
+			for these microcontrollers(MCU for short) very easy and have made the MCU family very popular.</p>
 			
 			<!--  -->
 			<div class="chapter">
 				<a id="code" href="#code"><img style="width: 20px;" src="img/star.svg" /></a>Code
 			</div>
 			<p></p>
-			
-			
-			
-			
-			
 			
 			<div class="codeblock">
 				<pre><code class="cpp"></code></pre>
@@ -73,7 +73,15 @@
 			
 			
 			
+			<!--  -->
+			<div class="chapter">
+				<a id="downloads" href="#downloads"><img style="width: 20px;" src="img/star.svg" /></a>Downloads
+			</div>
+			<p></p>
 			
+			
+			
+			<div></div>
 		</div>
 		<!-- footer -->
 		<div class="footer">
