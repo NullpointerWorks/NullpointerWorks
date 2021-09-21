@@ -26,7 +26,7 @@
 				<div><a href="#schema">Schematic</a></div>
 				<div><a href="#layout">PCB Layout</a></div>
 				<div><a href="#assembly">Assembly</a></div>
-				<div><a href="#drawing">Drawing</a></div>
+				<div><a href="#enclosure">Enclosure</a></div>
 				<div><a href="#code">Code</a></div>
 				<div><a href="#downloads">Downloads</a></div>
 			</div>
@@ -66,9 +66,9 @@
 			the strip have their data input daisy-chained together on the output of the previous. Only the first LED in 
 			the chain needs to be informed on what behaviour the others are to display. So to control eight RGB fans 
 			I need at least 8 digital pins, one for each LED strip. The mega328 has 10 digital I/O pins and 5 analog 
-			pins that can be configured to be inputs, or digital outputs. Lastly, to signal the controller to step to 
+			pins that can be configured to be inputs, or digital outputs. To signal the controller to step to 
 			the next color pattern I need to ensure I don't allocate all my interrupt-capable pins as RGB data outputs. </p>
-			<p>Finally, I want the controller to be easily installable inside a PC case. The 2.5-inch drive mounting 
+			<p>And finally, the controller must be easily installable inside a PC case. The 2.5-inch drive mounting 
 			spots are very common nowadays, so I wanted the controller to be mountable in a free slot. In case the 
 			controller can't be mounted anywhere it still need an enclosure to protect the circuitry.</p>
 			
@@ -90,9 +90,9 @@
 			</div>
 			<p></p>
 			
-			<!-- drawing the housing for 3d printing -->
+			<!-- drawing the enclosure for 3d printing -->
 			<div class="chapter">
-				<a id="drawing" href="#drawing"><img style="width: 20px;" src="img/star.svg" /></a>Drawing The Case
+				<a id="enclosure" href="#enclosure"><img style="width: 20px;" src="img/star.svg" /></a>Enclosure
 			</div>
 			<p></p>
 			
