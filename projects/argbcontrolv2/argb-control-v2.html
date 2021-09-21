@@ -20,7 +20,7 @@
 			<div id="lightbox" class="modal">
 				<div id="modal-content" class="modal-content">
 					<span class="modal-close">&times;</span>
-					<img id="modal-image" style="width:100%;" src="img/schem/Supply.png"></img>
+					<img id="modal-image" style="width:100%;" src=""></img>
 				</div>
 			</div>
 			
@@ -86,7 +86,15 @@
 			</div>
 			<p></p>
 			
-			<button id="myBtn">Open Modal</button>
+			<button id="" onclick="showModalImage('img/schem/Supply.png')">ATX Supply</button>
+			<button id="" onclick="showModalImage('img/schem/UART.png')">USB to UART</button>
+			<button id="" onclick="showModalImage('img/schem/MCU.png')">MCU</button>
+			<button id="" onclick="showModalImage('img/schem/LEDStrips.png')">LED Strips</button>
+			<button id="" onclick="showModalImage('img/schem/FanConnection.png')">Fan Connection</button>
+			
+			
+			
+			
 			
 			<!-- drawing the PCB -->
 			<div class="chapter">
@@ -143,9 +151,12 @@
 			}
 		}
 		
-		var btn = document.getElementById("myBtn");
-		btn.onclick = function() // show when clicking
+		function showModalImage(image) // show when clicking
 		{
+			var img = document.getElementById("modal-image");
+			img.src = image;
+			
+			var modal = document.getElementById("lightbox");
 			modal.style.display = "block";
 		}
 		
