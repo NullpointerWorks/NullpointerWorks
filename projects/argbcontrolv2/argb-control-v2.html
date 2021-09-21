@@ -43,18 +43,18 @@
 			<div class="chapter">
 				<a id="intro" href="#intro"><img style="width: 20px;" src="img/star.svg" /></a>Introduction
 			</div>
-			<p>For the majority of people who own a computer treat it as nothing more than a fancy box. A tool that 
+			<p>For the majority of people that own a computer treat it as nothing more than a fancy box. A tool that 
 			breaks often and is always a hassle to update or kept at reasonable speed. They use it to check their 
 			e-mails, view and print documents, update their socials and perhaps play a game of solitair. However, in 
 			the eyes of an enthusiast it's not just a fancy box, nor an over-powered calculator. It's a piece of 
 			furnature that requires the same love and care like anything else in the household.</p>
 			<p>In particular the gaming community is expressing this love in a way similar to the people tuning their 
-			car's performance and looks. When you search online for water-cooled PCs you find images of hard-tubing 
-			cooling systems with colorful coolant and lots of lighting and cable wiring matching the theme.</p>
+			car's performance and looks. When you search online for water-cooled PCs you find images of hardline tube 
+			cooling systems with colorful coolant and lots of lighting and cable wiring matching in color to fit the theme.</p>
 			<p>Mind you I'm not a hardcore PC tuner, but I do enjoy tinkering when I have the oppertunity. One of those 
-			opportunities had risen when I was building my new PC. It has plenty room for eight fans and since I
-			had some multicolor fans laying around, I thought it be fun to have those installed. Unfortunately, the 
-			orignal controller for these fans was lacking so I opted to create my own.</p>
+			opportunities had risen when I was building my new PC. It has plenty room for future upgrades and eight fan 
+			mounting points. Since I had some multicolor fans laying around, I thought it be fun to have those installed. 
+			Unfortunately, the original controller for those fans was lacking so I opted to make my own.</p>
 			<img class="image_pane" style="width:500px;" src="img/argb_fan_800.jpg"></img>
 			<div class="image_desc">A 120mm multicolor computer fan from Sharkoon. (not affiliated)</div>
 			
@@ -67,24 +67,28 @@
 			LEDs. I'm not sure exactly which product series they used, but I suspect they are WS2812B. The WS2812 are a 
 			popular choice in RGB strips and are consealed in a reasonably sized 5050 package. Having checked, the configuration
 			inside the fan turns out to be a circularly glued LED strip.</p>
-			<p>The Arduino development platform utilize AVR microcontroller(MCU for short) and among the most popular, 
+			<p>The Arduino development platform primarely utilize AVR microcontrollers and among the most popular, 
 			the mega328, has attained a large code base. Arduino has made development for these microcontrollers 
-			very easy with their programming software (the Arduino IDE) and have made the MCU family quite popular. </p>
+			very easy with their programming software (the Arduino IDE) and have made AVR quite popular. </p>
 			<p>The FastLED library can allocate a pin for sending data over to an addressable LED. All other LEDs on 
 			the strip have their data input daisy-chained together on the output of the previous. Only the first LED in 
 			the chain needs to be informed on what behaviour the others are to display. So to control eight RGB fans 
-			I need at least 8 digital pins, one for each LED strip. The mega328 has 10 digital I/O pins and 5 analog 
+			I need 8 digital pins, one for each LED strip. The mega328 has 10 digital I/O pins and 5 analog 
 			pins that can be configured to be inputs, or digital outputs. To signal the controller to step to 
 			the next color pattern I need to ensure I don't allocate all my interrupt-capable pins as RGB data outputs. </p>
-			<p>And finally, the controller must be easily installable inside a PC case. The 2.5-inch drive mounting 
-			spots are very common nowadays, so I wanted the controller to be mountable in a free slot. In case the 
-			controller can't be mounted anywhere it still need an enclosure to protect the circuitry.</p>
-			
+			<p>To really complete the project I need an enclosure to protect the circuitry. Since 2.5 inch drive mounting points 
+			are very common nowadays it would be nice if the controller can be mounted in an open slot. And if not 
+			it's not a big problem. I own an Ender 3 3D-printer so I can print the enclosure right here in my workspace.
 			<!-- drawing the schematic -->
 			<div class="chapter">
 				<a id="schema" href="#schema"><img style="width: 20px;" src="img/star.svg" /></a>Schematics
 			</div>
 			<p></p>
+			
+			
+			<div onclick="showModalImage('img/schem/Supply.png')">
+				<img src="img/schem/Supply.png" class="thumbnail"></img>
+			</div>
 			
 			<button id="" onclick="showModalImage('img/schem/Supply.png')">ATX Supply</button>
 			<button id="" onclick="showModalImage('img/schem/UART.png')">USB to UART</button>
@@ -139,18 +143,7 @@
 	</body>
 	<script src="js/argb-control-v2.js" type="text/javascript"></script>
 	<script src="lib/highlight.pack.js"></script>
-	<script>
-		hljs.initHighlightingOnLoad();
-		
-		var modal = document.getElementById("lightbox");
-		modal.onclick = function(event) // close when clicking anywhere
-		{
-			if (event.target == modal) 
-			{
-				modal.style.display = "none";
-			}
-		}
-		
+	<script type="text/javascript">
 		function showModalImage(image) // show when clicking
 		{
 			var img = document.getElementById("modal-image");
@@ -160,10 +153,26 @@
 			modal.style.display = "block";
 		}
 		
-		var span = document.getElementsByClassName("modal-close")[0];
-		span.onclick = function()
+		function closeModal()
 		{
+			var modal = document.getElementById("lightbox");
 			modal.style.display = "none";
+			
+			var img = document.getElementById("modal-image");
+			img.src = "";
 		}
+		
+		hljs.initHighlightingOnLoad();
+		
+		var modal = document.getElementById("lightbox");
+		modal.onclick = function(event) // close when clicking anywhere
+		{
+			if (event.target == modal) 
+			{
+				closeModal();
+			}
+		}
+		var span = document.getElementsByClassName("modal-close")[0];
+		span.onclick = closeModal;
 	</script>
 </html>
