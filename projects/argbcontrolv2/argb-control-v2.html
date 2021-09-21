@@ -15,6 +15,7 @@
 		<div class="parallax"></div>
 		<div class="content">
 			<div class="title">ARGB Controller v2</div>
+			
 			<!-- index -->
 			<div class="chapter">
 				<a id="table" href="#table"><img style="width: 20px;" /></a>Table of Content
@@ -23,11 +24,13 @@
 				<div><a href="#intro">Introduction</a></div>
 				<div><a href="#design">Design</a></div>
 				<div><a href="#schema">Schematic</a></div>
+				<div><a href="#layout">PCB Layout</a></div>
 				<div><a href="#assembly">Assembly</a></div>
 				<div><a href="#drawing">Drawing</a></div>
 				<div><a href="#code">Code</a></div>
 				<div><a href="#downloads">Downloads</a></div>
 			</div>
+			
 			<!-- introduction -->
 			<div class="chapter">
 				<a id="intro" href="#intro"><img style="width: 20px;" src="img/star.svg" /></a>Introduction
@@ -46,6 +49,7 @@
 			orignal controller for these fans was lacking so I opted to create my own.</p>
 			<img class="image_pane" style="width:500px;" src="img/argb_fan_800.jpg"></img>
 			<div class="image_desc">A 120mm multicolor computer fan from Sharkoon. (not affiliated)</div>
+			
 			<!-- reviewing my options -->
 			<div class="chapter">
 				<a id="design" href="#design"><img style="width: 20px;" src="img/star.svg" /></a>Design
@@ -58,10 +62,36 @@
 			<p>The FastLED library allocates a single pin for sending data over to an addressable LED. All other LEDs on 
 			the strip have their data input daisy-chained together on the output of the previous. Only the first LED in 
 			the chain needs to be informed on what behaviour the others are to display.</p>
-			<p>The Arduino development platform utilize AVR microcontroller and among the most popular, the . Arduino has made development 
-			for these microcontrollers(MCU for short) very easy and have made the MCU family very popular.</p>
+			<p>The Arduino development platform utilize AVR microcontroller (MCU for short) and among the most popular, 
+			the ATmega328, has attained a large code base. Arduino has made development for these microcontrollers 
+			very easy and have made the MCU family quite popular. </p>
 			
-			<!--  -->
+			
+			<!-- drawing the schematic -->
+			<div class="chapter">
+				<a id="schema" href="#schema"><img style="width: 20px;" src="img/star.svg" /></a>Schematics
+			</div>
+			<p></p>
+			
+			<!-- drawing the PCB -->
+			<div class="chapter">
+				<a id="layout" href="#layout"><img style="width: 20px;" src="img/star.svg" /></a>PCB Layout
+			</div>
+			<p></p>
+			
+			<!-- soldering the board -->
+			<div class="chapter">
+				<a id="assembly" href="#assembly"><img style="width: 20px;" src="img/star.svg" /></a>Assembly
+			</div>
+			<p></p>
+			
+			<!-- drawing the housing for 3d printing -->
+			<div class="chapter">
+				<a id="drawing" href="#drawing"><img style="width: 20px;" src="img/star.svg" /></a>Drawing The Case
+			</div>
+			<p></p>
+			
+			<!-- writing the controller code -->
 			<div class="chapter">
 				<a id="code" href="#code"><img style="width: 20px;" src="img/star.svg" /></a>Code
 			</div>
@@ -71,16 +101,11 @@
 				<pre><code class="cpp"></code></pre>
 			</div>
 			
-			
-			
-			
-			<!--  -->
+			<!-- various downloads -->
 			<div class="chapter">
 				<a id="downloads" href="#downloads"><img style="width: 20px;" src="img/star.svg" /></a>Downloads
 			</div>
 			<p></p>
-			
-			
 			
 			<div></div>
 		</div>
