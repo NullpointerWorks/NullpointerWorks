@@ -57,15 +57,18 @@
 			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for 
 			controller addressable LEDs. Good stuff, since the LEDs inside the multicolor fans are addressable red-green-blue(RGB) 
 			LEDs. I'm not sure exactly which product series they used, but I suspect they are WS2812B. The WS2812 are a 
-			popular choice in RGB strips and are consealed in a reasonably sized 5050 package, and the lighitng inside 
-			the fan is just a circular glued LED strip.</p>
-			<p>The FastLED library allocates a single pin for sending data over to an addressable LED. All other LEDs on 
+			popular choice in RGB strips and are consealed in a reasonably sized 5050 package. Having checked, the configuration
+			inside the fan turns out to be a circularly glued LED strip.</p>
+			<p>The Arduino development platform utilize AVR microcontroller(MCU for short) and among the most popular, 
+			the mega328, has attained a large code base. Arduino has made development for these microcontrollers 
+			very easy with their programming software (the Arduino IDE) and have made the MCU family quite popular. </p>
+			<p>The FastLED library can allocate a pin for sending data over to an addressable LED. All other LEDs on 
 			the strip have their data input daisy-chained together on the output of the previous. Only the first LED in 
-			the chain needs to be informed on what behaviour the others are to display.</p>
-			<p>The Arduino development platform utilize AVR microcontroller (MCU for short) and among the most popular, 
-			the ATmega328, has attained a large code base. Arduino has made development for these microcontrollers 
-			very easy and have made the MCU family quite popular. </p>
-			
+			the chain needs to be informed on what behaviour the others are to display. So to control eight RGB fans 
+			I need at least 8 digital pins, one for each LED strip. The mega328 has 10 digital I/O pins, so that works 
+			out perfectly fine. Lastly, I need one extra pin to signal the controller to step to the next color pattern.</p>
+			<p>Finally, I want the controller to be easily installable inside a PC case. The 2.5-inch drive mounting 
+			spots are very common nowadays, so I wanted the controller to be mountable in a free slot.</p>
 			
 			<!-- drawing the schematic -->
 			<div class="chapter">
