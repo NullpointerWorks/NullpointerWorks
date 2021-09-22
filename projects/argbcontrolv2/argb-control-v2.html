@@ -16,13 +16,6 @@
 		<div class="content">
 			<div class="title">ARGB Controller v2</div>
 			
-			<!-- modal display -->
-			<div id="modal" class="modal">
-			<div id="modal-content" class="modal-content" style="line-height: 0;">
-				<img id="modal-image" class="modal-image" src=""></img>
-			</div>
-			</div>
-			
 			<!-- index -->
 			<div class="chapter">
 				<a id="table" href="#table"><img style="width: 20px;" /></a>Table of Content
@@ -57,8 +50,8 @@
 			fun to have those installed. Unfortunately, the original controller for those fans was lacking so I opted 
 			to make my own.</p>
 			
-			<div onclick="showModalImage('img/argb_fan_800 - Copy.jpg')">
-				<img style="cursor: zoom-in;" class="image_pane" src="img/argb_fan_800 - Copy.jpg"></img>
+			<div onclick="openURL('img/argb_fan_800.jpg')">
+				<img style="cursor: zoom-in;" class="image_pane" src="img/argb_fan_800.jpg"></img>
 			</div>
 			<div class="image_desc">A 120mm multicolor computer fan from Sharkoon. (not affiliated)</div>
 			
@@ -82,42 +75,42 @@
 			the next color pattern I need to ensure I don't allocate all my interrupt-capable pins as RGB data outputs. </p>
 			<p>To really complete the project I need an enclosure to protect the circuitry. Since 2.5 inch drive mounting points 
 			are very common nowadays it would be nice if the controller can be mounted in an open slot. And if not 
-			it's not a big problem. I own an Ender 3 3D-printer so I can print the enclosure right here in my workspace.
+			it's not a big problem. I own a Creality Ender-3 3D-printer so I can print the enclosure right here in my workspace.</p>
+			
 			<!-- drawing the schematic -->
 			<div class="chapter">
 				<a id="schema" href="#schema"><img style="width: 20px;" src="img/star.svg" /></a>Schematics
 			</div>
-			
 			<p></p>
-			<div onclick="showModalImage('img/schem/Supply.png')">
+			<div onclick="openURL('img/schem/Supply.png')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/schem/Supply.png"></img>
 			</div>
 			<div class="image_desc">ATX Power supply to the controller.</div>
 			
 			
 			<p></p>
-			<div onclick="showModalImage('img/schem/UART.png')">
+			<div onclick="openURL('img/schem/UART.png')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/schem/UART.png"></img>
 			</div>
 			<div class="image_desc">USB input to UART conversion.</div>
 			
 			
 			<p></p>
-			<div onclick="showModalImage('img/schem/MCU.png')">
+			<div onclick="openURL('img/schem/MCU.png')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/schem/MCU.png"></img>
 			</div>
 			<div class="image_desc">Microcontroller circuitry with input switch.</div>
 			
 			
 			<p></p>
-			<div onclick="showModalImage('img/schem/LEDStrips.png')">
+			<div onclick="openURL('img/schem/LEDStrips.png')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/schem/LEDStrips.png"></img>
 			</div>
 			<div class="image_desc">Addressable-RGB strip headers.</div>
 			
 			
 			<p></p>
-			<div onclick="showModalImage('img/schem/FanConnection.png')">
+			<div onclick="openURL('img/schem/FanConnection.png')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/schem/FanConnection.png"></img>
 			</div>
 			<div class="image_desc">12V ventilation headers.</div>
@@ -172,33 +165,11 @@
 	<script src="js/argb-control-v2.js" type="text/javascript"></script>
 	<script src="lib/highlight.pack.js"></script>
 	<script type="text/javascript">
-		function showModalImage(image)
+		function openURL(image)
 		{
-			var modal = document.getElementById("modal");
-			modal.style.display = "block";
-			
-			var img = document.getElementById("modal-image");
-			img.src = image;
-		}
-		
-		function closeModal()
-		{
-			var modal = document.getElementById("modal");
-			modal.style.display = "none";
-			
-			var img = document.getElementById("modal-image");
-			img.src = "";
+			window.open(image, "_blank");
 		}
 		
 		hljs.initHighlightingOnLoad();
-		
-		var modal = document.getElementById("modal");
-		modal.onclick = function(event) // close when clicking anywhere
-		{
-			if (event.target == modal) 
-			{
-				closeModal();
-			}
-		}
 	</script>
 </html>
