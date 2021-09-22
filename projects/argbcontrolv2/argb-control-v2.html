@@ -19,8 +19,7 @@
 			<!-- modal display -->
 			<div id="modal" class="modal">
 			<div id="modal-content" class="modal-content" style="line-height: 0;">
-				<span style="line-height: 1;" class="modal-close">&times;</span>
-				<img id="modal-image" style="width:100%;" src="" />
+				<img id="modal-image" class="modal-image" src="" />
 			</div>
 			</div>
 			
@@ -53,10 +52,10 @@
 			cooling systems with colorful coolant and lots of lighting and cable wiring matching in color to fit the 
 			theme.</p>
 			<p>Mind you I'm not a hardcore PC tuner, but I do enjoy tinkering when I have the oppertunity. One of 
-			those opportunities had risen when I was building my new PC. The new case has plenty of room for future upgrades and 
-			eight fan mounting points. Since I had some multicolor fans laying around, I thought it be fun to have 
-			those installed. Unfortunately, the original controller for those fans was lacking so I opted to make my 
-			own.</p>
+			those opportunities had risen when I was building my new PC. The new case has plenty of room for future 
+			upgrades and eight fan mounting points. Since I had some multicolor fans laying around, I thought it be 
+			fun to have those installed. Unfortunately, the original controller for those fans was lacking so I opted 
+			to make my own.</p>
 			
 			<div onclick="showModalImage('img/argb_fan_800.jpg')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/argb_fan_800.jpg"></img>
@@ -109,11 +108,13 @@
 			</div>
 			<div class="image_desc">Microcontroller circuitry with input switch.</div>
 			
+			
 			<p></p>
 			<div onclick="showModalImage('img/schem/LEDStrips.png')">
 				<img style="cursor: zoom-in;" class="image_pane" src="img/schem/LEDStrips.png"></img>
 			</div>
 			<div class="image_desc">Addressable-RGB strip headers.</div>
+			
 			
 			<p></p>
 			<div onclick="showModalImage('img/schem/FanConnection.png')">
@@ -175,6 +176,7 @@
 		{
 			var img = document.getElementById("modal-image");
 			img.src = image;
+			//img.style.objectFit = "contain";
 			
 			var modal = document.getElementById("modal");
 			modal.style.display = "block";
@@ -199,7 +201,5 @@
 				closeModal();
 			}
 		}
-		var span = document.getElementsByClassName("modal-close")[0];
-		span.onclick = closeModal;
 	</script>
 </html>
