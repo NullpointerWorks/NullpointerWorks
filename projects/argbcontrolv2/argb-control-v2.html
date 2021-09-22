@@ -85,7 +85,7 @@
 			<img onclick="openURL('img/schem/Supply.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/Supply.png"></img>
 			<div class="image_desc">ATX Power supply to the controller.</div>
 			
-			<p>Next up is the USB connnection. I want to be able to upload code to the device with as much ease as 
+			<p>Next up is the USB connection. I want to be able to upload code to the device with as much ease as 
 			possible. This is accomplished using an FT232 integrated circuit (IC). It translates the USB communication 
 			protocol to RX/TX UART which the microcontroller understands. I've added two LEDs to indicate when 
 			communication is happening. These are available on pin 22 and 23 by default on a fresh FT232 IC. The 
@@ -98,7 +98,7 @@
 			
 			<p>Hooking up the microcontroller is pretty straight forward. The RX, TX and DTR will go to pin 1, 2 and 3 
 			of the Mega328. Remember to swap the RX and TX lines between the two IC's. When someone is transmitting(TX) 
-			the other is recieving(RX), and visa versa. Pin 12 through 19 will server as data lines for the ARGB strips. 
+			the other is recieving(RX), and visa versa. Pin 12 through 19 will serve as data lines for the ARGB strips. 
 			Pin 4 is an interrupt-capable pin which I'll hook up to a switch. You could hook up the switch directly, but
 			I recommend using a debouncing circuit.</p>
 			<img onclick="openURL('img/schem/MCU.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/MCU.png"></img>
@@ -115,17 +115,23 @@
 			<img onclick="openURL('img/schem/FanConnection.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/FanConnection.png"></img>
 			<div class="image_desc">12V ventilation headers.</div>
 			
-			
-			
-			
-			
-			
-			
 			<!-- drawing the PCB -->
 			<div class="chapter">
 				<a id="layout" href="#layout"><img style="width: 20px;" src="img/star.svg" /></a>PCB Layout
 			</div>
 			<p></p>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			<!-- soldering the board -->
 			<div class="chapter">
