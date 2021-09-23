@@ -36,7 +36,7 @@
 				<a id="intro" href="#intro"><img style="width: 20px;" src="img/star.svg" /></a>Introduction
 			</div>
 			<p>For the majority of people that own a computer treat it as nothing more than a fancy box. A tool that 
-			breaks often and is always a hassle to update or kept at reasonable speed. They use it to check their 
+			breaks often and is always a hassle to update or kept up to speed. They use it to check their 
 			e-mails, view and print documents, update their socials and perhaps play a game of solitair. However, in 
 			the eyes of an enthusiast it's not just a fancy box, nor an over-powered calculator. It's a piece of 
 			furnature that requires the same love and care like anything else in the household.</p>
@@ -60,8 +60,8 @@
 			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for 
 			controlling addressable LEDs. Good stuff, since the LEDs inside the multicolor fans are addressable red, 
 			green and blue(RGB) LEDs. I'm not sure exactly which product series they used, but I suspect they are 
-			WS2812B. The WS2812 are a popular choice in RGB strips and are consealed in a reasonably sized 5050 
-			package. Having checked, the configuration inside the fan turns out to be a circularly glued LED strip.</p>
+			WS2812B. The WS2812 are a popular choice in RGB strips and are consealed in a reasonably sized package. 
+			Having checked, it turns out the fan's enclosure has a LED strip glued inside to form a circle.</p>
 			<p>The Arduino development platform primarely utilize AVR microcontrollers and among the most popular, the 
 			Mega328, has attained a large code base. Arduino has made development for these microcontrollers very easy 
 			with their programming software and has made the AVR family quite popular. </p>
@@ -89,7 +89,7 @@
 			
 			<p>Next up is the USB connection. I want to be able to upload code to the device with as much ease as 
 			possible. This is accomplished using an FT232 integrated circuit (IC). It translates the USB communication 
-			protocol to RX/TX UART which the microcontroller understands. I've added two LEDs to indicate when 
+			protocol to UART which the microcontroller understands. I've added two LEDs to indicate when 
 			communication is happening. These are available on pin 22 and 23 by default on a fresh FT232 IC. The 
 			USB lines have SP1003 transient suppression diodes to help protect against electrostatic discharge events. 
 			This could be, for example, someone touching the bare circuit board while not properly grounded or a power 
@@ -124,19 +124,24 @@
 			
 			<p>The only through-hole(TH) components on the PCB are headers and the Mega328, everything else are surface-mounted 
 			devices(SMD). I decided on TH instead of SMD for the microcontroller to make maintenance easier. This 
-			revision does not have an ISP interface that would enable for burning the bootloader directly. I may add this 
-			in a later revision if needed. The location of the Mega328 will be populated by a 28-pin insertion socket. </p>
+			version does not have an in-system programming(ISP) interface so you can't burn a bootloader into the 
+			microcontroller directly. I may add this in future revisions. The location of the Mega328 will be populated 
+			by a 28-pin insertion socket. </p>
 			<img onclick="openURL('img/pcb/top.png');" style="cursor: zoom-in;" class="image_pane" src="img/pcb/top.png"></img>
-			<div class="image_desc">Top PCB layer.</div>
+			<div class="image_desc">PCB top layer.</div>
 			
 			<p>To isolate the 12V and 5V section I made sure the fans and ARGB header have their own copper planes on the 
 			PCB. The the common powerlines seperate as well, so it's the responsibility of the power supply unit to manage 
-			the power output.</p>
+			the power output. The four large non-plated drill holes are the mounting holes that should match the dimensions 
+			of a 2.5-inch drive. </p>
 			
 			<p>The bottom layer is simple enough. There are no components placed and is just for soldering the TH components.</p>
-			
 			<img onclick="openURL('img/pcb/bot.png');" style="cursor: zoom-in;" class="image_pane" src="img/pcb/bot.png"></img>
-			<div class="image_desc">Bottom PCB layer.</div>
+			<div class="image_desc">PCB bottom layer.</div>
+			
+			<p>I'll not be etching the PCB myself but outsource it to <a href="https://aisler.net" target="_blank">Aisler</a> 
+			instead. They have a factory situated in Germany which is very convenient for me living in the 
+			Netherlands. Note that I'm not affiliated to Aisler.</p>
 			
 			<!-- board assembly -->
 			<div class="chapter">
@@ -144,8 +149,6 @@
 			</div>
 			<p></p>
 			
-			
-			<table>
 			
 			
 			
@@ -172,6 +175,10 @@
 			<p></p>
 			
 			<div></div>
+		</div>
+		<!-- credits -->
+		<div class="credits">
+			
 		</div>
 		<!-- footer -->
 		<div class="footer">
