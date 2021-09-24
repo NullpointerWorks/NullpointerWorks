@@ -162,16 +162,77 @@
 			<div class="chapter">
 				<a id="code" href="#code"><img style="width: 20px;" src="img/star.svg" /></a>Code
 			</div>
-			<p></p>
+			<p>Lets begin with driving the ARGB fans. Installing the FastLED library can be done through the Library 
+			Manager in the Arduino IDE, but can also be manually installed. </p>
 			
-			
-			
-			
+			<p>The code below shows is an example of a basic rainbow display. This color pattern is pretty much the 
+			standard in PC lighting. The RGB data will be sent over Arduino pin D8 which is pin 14 on the 
+			microcontroller.</p>
 			<div class="codeblock">
-				<pre><code class="cpp"></code></pre>
+<pre><code class="cpp">#include &lt;FastLED.h&gt;
+
+void setup() 
+{
+	CRGB* rgb = new CRGB[20];
+	rgb[0]->setRGB(73, 231, 0);
+	rgb[1]->setRGB(129, 195, 0);
+	rgb[2]->setRGB(180, 147, 0);
+	rgb[3]->setRGB(220, 92, 0);
+	rgb[4]->setRGB(246, 35, 0);
+	rgb[5]->setRGB(255, 0, 0);
+	rgb[6]->setRGB(246, 0, 35);
+	rgb[7]->setRGB(220, 0, 92);
+	rgb[8]->setRGB(180, 0, 147);
+	rgb[9]->setRGB(129, 0, 195);
+	rgb[10]->setRGB(73, 0, 231);
+	rgb[11]->setRGB(17, 0, 251);
+	rgb[12]->setRGB(0, 0, 254);
+	rgb[13]->setRGB(0, 54, 239);
+	rgb[14]->setRGB(0, 111, 208);
+	rgb[15]->setRGB(0, 164, 164);
+	rgb[16]->setRGB(0, 208, 111);
+	rgb[17]->setRGB(0, 239, 54);
+	rgb[18]->setRGB(0, 254, 0);
+	rgb[19]->setRGB(17, 251, 0);
+	
+	FastLED.addLeds&lt;NEOPIXEL, 8&gt;(rgb, 20);
+}
+
+void loop()
+{
+	// modify the LED data to change the pattern
+	FastLED.show();
+	delay(100);
+}</code></pre>
+			</div>
+			<p>I want the color palette to be swappable, so this needs to be encapsulated in it's own class. Each
+			palette has it's own instance that I can hot-swap to introduce new colors.</p>
+			
+			
+			<p>I mentioned earlier in this article that I wanted to allocate an interrupt-capable pin for swapping
+			a pattern. In the setup() function I'll attach an interrupt that executes the doInterrupt() function.
+			The advantage of using in interrupt is that triggering it halts all execution in the microcontroller and
+			runs the linked code. After the function completes, execution returns as before.</p>
+			<div class="codeblock">
+<pre><code class="cpp">void doInterrupt()
+{
+	// next pattern ...
+}
+
+void setup() 
+{
+	attachInterrupt( digitalPinToInterrupt(2), doInterrupt, FALLING );
+}
+</code></pre>
 			</div>
 			
+			<p>Setting the digital interrupt pin on 2 refers to the Arduino D2 pin. This is pin 4 on the 
+			microcontroller. The interrupt will be triggered on the falling-edge of the input signal. This means that 
+			as soon as the input goes from 5V to 0V, the interrupt code gets executed. </p>
 			
+			<p>Our debouncing circuit keeps pin 4 at 5V as long as the button is resting. When pressing the button, 
+			the capacitor discharges and drops to 0V. This triggers the interrupt. When releasing the button, the 
+			signal rises again to 5V.</p>
 			
 			
 			
