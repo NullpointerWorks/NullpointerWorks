@@ -225,14 +225,35 @@ void setup()
 }
 </code></pre>
 			</div>
-			
 			<p>Setting the digital interrupt pin on 2 refers to the Arduino D2 pin. This is pin 4 on the 
 			microcontroller. The interrupt will be triggered on the falling-edge of the input signal. This means that 
 			as soon as the input goes from 5V to 0V, the interrupt code gets executed. </p>
 			
-			<p>Our debouncing circuit keeps pin 4 at 5V as long as the button is resting. When pressing the button, 
-			the capacitor discharges and drops to 0V. This triggers the interrupt. When releasing the button, the 
-			signal rises again to 5V.</p>
+			<p>Our debouncing circuit keeps pin 4 at 5V as long as the button is resting. When pressed the capacitor 
+			discharges and drops to 0V. This triggers the interrupt. When releasing the button the signal rises 
+			again to 5V as the capacitor recharges.</p>
+			
+			
+			<p>I don't want to mess up the palette by altering it directly. Instead, I want to generate a buffer 
+			to which color data gets placed and displayed.</p>
+			
+			<div class="codeblock">
+<pre><code class="cpp">void setPattern(Palette* pal, CRGB* leds, uint8_t* state)
+{
+	int i = 0;
+	for (; i<20; i++)
+	{
+		int a = (i + *state + offset) % 20;
+		*(leds + i) = *pal->getColor(a);
+	}
+	
+	*state = (1 + *state) % 20;
+}
+</code></pre>
+			</div>
+			
+			<p></p>
+			
 			
 			
 			
