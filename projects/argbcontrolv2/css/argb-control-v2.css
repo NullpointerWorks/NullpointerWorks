@@ -11,11 +11,11 @@ body::after /* pre-loader */
    height:0; 
    overflow:hidden; 
    z-index:-1;
-   content:url("../img/argb_controller_800.jpg");
+   content:url("../img/argb/argb_controller.jpg");
 }
 div.parallax 
 {
-	background-image: url("../img/argb_controller_800.jpg");
+	background-image: url("../img/argb/argb_controller.jpg");
 	min-height: 350px;
 	background-attachment: fixed;
 	background-position: 50% -5%;
