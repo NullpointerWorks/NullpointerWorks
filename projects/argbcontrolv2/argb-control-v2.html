@@ -56,28 +56,28 @@
 			<div class="chapter">
 				<a id="design" href="#design"><img style="width: 20px;" src="img/star.svg" /></a>Design
 			</div>
-			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for 
-			controlling addressable LEDs. Good stuff, since the LEDs inside the multicolor fans are addressable red, 
-			green and blue(RGB) LEDs. I'm not sure exactly which product series they used, but I suspect they are 
-			WS2812B. The WS2812 are a popular choice in RGB strips and are consealed in a reasonably sized package. 
-			Having checked, it turns out the fan's enclosure has a LED strip glued inside to form a circle.</p>
+			<p>I'm not sure exactly which product series they used to produce the red, green and blue(RGB) lighting 
+			effects, but I suspect they are WS2812B. The WS2812 are a popular choice in RGB strips and are consealed 
+			in a reasonably sized package. Having checked, it turns out the fan's enclosure has a LED strip glued 
+			inside to form a circle.</p>
 			
 			<img onclick="openURL('img/argb_fan_open.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/argb_fan_open.jpg"></img>
 			<div class="image_desc">Translucent cover removed exposing the LED strip.</div>
 			
-			<p>The Arduino development platform primarely utilize AVR microcontrollers and among the most popular, the 
-			Mega328, has attained a large code base. Arduino has made development for these microcontrollers very easy 
-			with their programming software and has made the AVR family quite popular. </p>
-			<p>The FastLED library can allocate a single pin for sending data to an addressable LED. All other LEDs 
-			on the strip have their data input daisy-chained together on the output of the previous. Only the first 
-			LED in the chain needs to be informed on what behaviour the others are to display. So to control eight 
-			RGB fans I need 8 digital pins, one for each LED strip. The Mega328 has 10 digital I/O pins and 5 analog 
-			pins that can be configured to be inputs, or digital outputs. To signal the controller to step to the next 
-			color pattern I need to ensure I keep at least one interrupt-capable pin as an input.</p>
-			<p>To really complete the project I need an enclosure to protect the circuitry. Since 2.5 inch drive 
+			<p>These types of LEDs are also referred to as addressable-RGB. A device sends data to it and the circuitry 
+			inside the LED manages the color output. All you need is 5 volts of power and a data line.</p>
+			
+			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for 
+			controlling addressable LEDs. All other LEDs on the strip have their data input daisy-chained together on the output 
+			of the previous. Only the first LED in the chain needs to be informed on what behaviour the others are 
+			to display. So to control eight RGB fans I need eight digital pins, one for each LED strip. The Mega328 has 
+			10 digital I/O pins and 5 analog pins that can be configured to be inputs, or digital outputs. I need to 
+			ensure to keep at least one interrupt-capable pin as an input to signal the controller to step to the next pattern.</p>
+			
+			<p>To really complete this project I need an enclosure to protect the circuitry. Since 2.5 inch drive 
 			mounting points are very common nowadays it would be nice if the controller can be mounted in an open slot. 
-			But that's completely optional. I own a Creality Ender-3 3D-printer so I can print the enclosure right 
-			here at my workspace.</p>
+			But that's completely optional. I own a 3D-printer so I can print the enclosure right 
+			here at my workshop.</p>
 			
 			<!-- drawing the schematic -->
 			<div class="chapter">
