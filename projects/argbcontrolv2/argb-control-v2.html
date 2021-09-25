@@ -27,7 +27,7 @@
 				<div><a href="#layout">PCB Layout</a></div>
 				<div><a href="#enclosure">Enclosure</a></div>
 				<div><a href="#code">Code</a></div>
-				<div><a href="#assembly">Assembly</a></div>
+				<div><a href="#conclusion">Conclusion</a></div>
 				<div><a href="#downloads">Downloads</a></div>
 			</div>
 			
@@ -144,17 +144,28 @@
 			
 			<p>I'll not be etching the PCB myself but outsource it to <a href="https://aisler.net" target="_blank">Aisler</a> 
 			instead. They have a factory situated in Germany which is convenient for me living in the Netherlands. Note 
-			that I'm not affiliated to Aisler.</p>
-			
-			
-			
-			
+			that I'm not affiliated with Aisler.</p>
 			
 			<!-- drawing the enclosure for 3d printing -->
 			<div class="chapter">
 				<a id="enclosure" href="#enclosure"><img style="width: 20px;" src="img/star.svg" /></a>Enclosure
 			</div>
 			<p></p>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			<!-- writing the controller code -->
 			<div class="chapter">
@@ -163,54 +174,34 @@
 			<p>Lets begin with driving the ARGB fans. Installing the FastLED library can be done through the Library 
 			Manager in the Arduino IDE, but can also be manually installed. </p>
 			
-			<p>The code below shows is an example of a basic rainbow display. This color pattern is pretty much the 
-			standard in PC lighting. The RGB data will be sent over Arduino pin D8 which is pin 14 on the 
-			microcontroller.</p>
+			<p>The code below demonstrates how RGB data is sent to the LED strip. Using the addLeds() method I set
+			the LED type to "NeoPixel" which is usually WS2812, data output set to "8" which is Arduino's D8 pin, and
+			the amount of LEDs in the chain to 1.</p>
 			<div class="codeblock">
 <pre><code class="cpp">#include &lt;FastLED.h&gt;
 
 void setup() 
 {
-	CRGB* rgb = new CRGB[20];
-	rgb[0]->setRGB(73, 231, 0);
-	rgb[1]->setRGB(129, 195, 0);
-	rgb[2]->setRGB(180, 147, 0);
-	rgb[3]->setRGB(220, 92, 0);
-	rgb[4]->setRGB(246, 35, 0);
-	rgb[5]->setRGB(255, 0, 0);
-	rgb[6]->setRGB(246, 0, 35);
-	rgb[7]->setRGB(220, 0, 92);
-	rgb[8]->setRGB(180, 0, 147);
-	rgb[9]->setRGB(129, 0, 195);
-	rgb[10]->setRGB(73, 0, 231);
-	rgb[11]->setRGB(17, 0, 251);
-	rgb[12]->setRGB(0, 0, 254);
-	rgb[13]->setRGB(0, 54, 239);
-	rgb[14]->setRGB(0, 111, 208);
-	rgb[15]->setRGB(0, 164, 164);
-	rgb[16]->setRGB(0, 208, 111);
-	rgb[17]->setRGB(0, 239, 54);
-	rgb[18]->setRGB(0, 254, 0);
-	rgb[19]->setRGB(17, 251, 0);
+	int red = 255;
+	int green = 255;
+	int blue = 255;
 	
-	FastLED.addLeds&lt;NEOPIXEL, 8&gt;(rgb, 20);
+	CRGB* rgb = new CRGB();
+	rgb->setRGB(red, green, blue);
+	FastLED.addLeds&lt;NEOPIXEL, 8&gt;(rgb, 1);
 }
 
 void loop()
 {
-	// modify the LED data to change the pattern
+	// modify behavior here ...
 	FastLED.show();
 	delay(100);
 }</code></pre>
 			</div>
-			<p>I want the color palette to be swappable, so this needs to be encapsulated in it's own class. Each
-			palette has it's own instance that I can hot-swap to introduce new colors.</p>
-			
-			
-			<p>I mentioned earlier in this article that I wanted to allocate an interrupt-capable pin for swapping
-			a pattern. In the setup() function I'll attach an interrupt that executes the doInterrupt() function.
-			The advantage of using in interrupt is that triggering it halts all execution in the microcontroller and
-			runs the linked code. After the function completes, execution returns as before.</p>
+			<div class="image_desc">Sets the first LED in the chain to a white color.</div>
+			<p>The interrupt-capable pin we reserved for swapping the pattern needs to be attached to a function. When 
+			the iterrupt pin gets triggered it halts all execution and runs the linked code. After the function returns, 
+			execution resumes from where it left off.</p>
 			<div class="codeblock">
 <pre><code class="cpp">void doInterrupt()
 {
@@ -223,54 +214,104 @@ void setup()
 }
 </code></pre>
 			</div>
-			<p>Setting the digital interrupt pin on 2 refers to the Arduino D2 pin. This is pin 4 on the 
-			microcontroller. The interrupt will be triggered on the falling-edge of the input signal. This means that 
-			as soon as the input goes from 5V to 0V, the interrupt code gets executed. </p>
+			<div class="image_desc">Sets D2 as digital interrupt pin.</div>
+			<p>The interrupt will be triggered on the falling-edge of the input signal. This means that as soon as the 
+			input goes from 5V to 0V, the interrupt code gets executed. </p>
 			
-			<p>Our debouncing circuit keeps pin 4 at 5V as long as the button is resting. When pressed the capacitor 
-			discharges and drops to 0V. This triggers the interrupt. When releasing the button the signal rises 
-			again to 5V as the capacitor recharges.</p>
-			
-			
-			<p>I don't want to mess up the palette by altering it directly. Instead, I want to generate a buffer 
-			to which color data gets placed and displayed.</p>
-			
+			<p>During operation multiple fan controllers will need access to the same color palette. The state of the 
+			palette has to stay unaltered while the state of behavior of each fan may differ. Each palette will have a
+			class containing that information.</p>
 			<div class="codeblock">
-<pre><code class="cpp">void setPattern(Palette* pal, CRGB* leds, uint8_t* state)
+<pre><code class="cpp">#include &lt;FastLED.h&gt;
+
+#ifndef _PALETTE_HPP_
+#define _PALETTE_HPP_
+
+class Palette
 {
-	int i = 0;
-	for (; i<20; i++)
-	{
-		int a = (i + *state + offset) % 20;
-		*(leds + i) = *pal->getColor(a);
-	}
-	
-	*state = (1 + *state) % 20;
-}
+public:
+	virtual ~Palette() {};
+	virtual int getSize();
+	virtual CRGB* getColor(int);
+};
+
+#endif
 </code></pre>
 			</div>
+			<div class="image_desc">Palette.hpp</div>
 			
-			<p></p>
+			<p>The display behavior is determined by a class whose sole responsibility is to step through the palette 
+			in a predictable way. Providing the palette, a buffer of LED memory and the current state of the pattern.
+			After completion the new state of the pattern is returned so it can be saved for the next step.</p>
+			<div class="codeblock">
+<pre><code class="cpp">#include &lt;FastLED.h&gt;
+#include "Palette.hpp"
+
+#ifndef _BEHAVIOR_HPP_
+#define _BEHAVIOR_HPP_
+
+class Behavior
+{
+public:
+	virtual ~Behavior() {}
+	virtual void setOffset(uint8_t);
+	virtual void setPattern(Palette*, CRGB*, uint8_t*);
+};
+
+#endif
+</code></pre>
+			</div>
+			<div class="image_desc">Behavior.hpp</div>
+			
+			<p>To keep track of each LED buffer and state for each fan we specify a controller class. Here I can set the 
+			palette and behavior to be used for a specific fan. I didn't design this RGB controller to handle different 
+			palettes and behaviors per fan, but the code would make this a possibility for future designs.</p>
+			<div class="codeblock">
+<pre><code class="cpp">#include &lt;FastLED.h&gt;
+#include "Palette.hpp"
+#include "Behavior.hpp"
+
+#ifndef _CONTROLLER_HPP_
+#define _CONTROLLER_HPP_
+
+class Controller
+{
+	CRGB* leds;
+	uint8_t state;
+	
+	Behavior* behave = nullptr;
+	Palette* palette = nullptr;
+	
+public:
+	Controller();
+	~Controller();
+	
+	void setBehavior(Behavior*);
+	void setPalette(Palette*);
+	void doNextStep();
+	CRGB* getLEDS();
+};
+
+#endif
+</code></pre>
+			</div>
+			<div class="image_desc">Controller.hpp</div>
 			
 			
 			
-			
-			<!-- board assembly -->
+			<!-- conclusion -->
 			<div class="chapter">
-				<a id="assembly" href="#assembly"><img style="width: 20px;" src="img/star.svg" /></a>Assembly
+				<a id="conclusion" href="#conclusion"><img style="width: 20px;" src="img/star.svg" /></a>Conclusion
 			</div>
 			<p></p>
-			
-			
-			
 			
 			<!-- various downloads -->
 			<div class="chapter">
 				<a id="downloads" href="#downloads"><img style="width: 20px;" src="img/star.svg" /></a>Downloads
 			</div>
+			<p></p>
 			
 			<div></div>
-			<p></p>
 		</div>
 		<!-- credits -->
 		<div class="credits">
