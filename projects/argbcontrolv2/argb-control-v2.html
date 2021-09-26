@@ -199,6 +199,11 @@ void loop()
 }</code></pre>
 			</div>
 			<div class="image_desc">Sets the first LED in the chain to a white color.</div>
+			
+			<img onclick="openURL('img/argb/single_color.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/argb/single_color.jpg"></img>
+			<div class="image_desc">Running the above code on an Arduino.</div>
+			
+			
 			<p>The interrupt-capable pin we reserved for swapping the pattern needs to be attached to a function. When 
 			the iterrupt pin gets triggered it halts all execution and runs the linked code. After the function returns, 
 			execution resumes from where it left off.</p>
@@ -288,7 +293,7 @@ public:
 	
 	void setBehavior(Behavior*);
 	void setPalette(Palette*);
-	void doNextStep();
+	void doNextStep();3w
 	CRGB* getLEDS();
 };
 
