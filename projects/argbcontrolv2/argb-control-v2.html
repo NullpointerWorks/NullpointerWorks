@@ -29,7 +29,6 @@
 				<div><a href="#enclosure">Enclosure</a></div>
 				<div><a href="#code">Code</a></div>
 				<div><a href="#conclusion">Conclusion</a></div>
-				<div><a href="#downloads">Downloads</a></div>
 			</div>
 			
 			<!-- introduction -->
@@ -298,6 +297,18 @@
 			<img onclick="openURL('img/enc/enclosure_top.png');" style="cursor: zoom-in;" class="image_pane" src="img/enc/enclosure_top.png"></img>
 			<div class="image_desc">The top of the enclosure with access ports, viewed from the bottom.</div>
 			
+			
+			
+			
+			
+			<p></p>
+			
+			
+			
+			
+			
+			
+			
 			<!-- writing the controller code -->
 			<div class="chapter">
 				<a id="code" href="#code"><img style="width: 20px;" src="img/star.svg" /></a>Code
@@ -330,10 +341,6 @@ void loop()
 }</code></pre>
 			</div>
 			<div class="image_desc">Sets the first LED in the chain to a white color.</div>
-			
-			<img onclick="openURL('img/argb/single_color.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/argb/single_color.jpg"></img>
-			<div class="image_desc">Running the above code on an Arduino.</div>
-			
 			
 			<p>The interrupt-capable pin we reserved for swapping the pattern needs to be attached to a function. When 
 			the iterrupt pin gets triggered it halts all execution and runs the linked code. After the function returns, 
@@ -441,15 +448,28 @@ public:
 			<div class="chapter">
 				<a id="conclusion" href="#conclusion"><img style="width: 20px;" src="img/star.svg" /></a>Conclusion
 			</div>
-			<p></p>
+			<p>All in all, this was an awesome project that combined various skills and tools so to produce a 
+			complete and working device. This project would have cost me a fortune if it were not for the free 
+			tools available.</p>
 			
-			<!-- various downloads -->
-			<div class="chapter">
-				<a id="downloads" href="#downloads"><img style="width: 20px;" src="img/star.svg" /></a>Downloads
-			</div>
-			<p></p>
+			<p>For drawing the schematics and tracing the PCB layout I used the free online tool EasyEDA. </p>
+			<img onclick="openURL('https://easyeda.com/');" style="cursor: pointer;" class="image_pane" src="img/cred/easyeda-logo_300-200.png"></img>
+			<div class="image_desc">EasyEDA - Schematic and layout tool.</div>
 			
-			<div></div>
+			<p>I outsourced the PCB manufacturing to Aisler in Germany. They've got competative prices, good 
+			quality and swift delivery.</p>
+			<img onclick="openURL('https://aisler.net/');" style="cursor: pointer;" class="image_pane" src="img/cred/aisler-logo_300-200.png"></img>
+			<div class="image_desc">Aisler - PCB manufacturing.</div>
+			
+			<p>It takes a bit getting used to, but drawing the enclosure turned out to be a breeze. Like any 
+			parametric modelling solution it takes a bit of time and effort to get some skill.</p>
+			<img onclick="openURL('https://www.freecadweb.org');" style="cursor: pointer;" class="image_pane" src="img/cred/FreeCAD-logo_300-200.png"></img>
+			<div class="image_desc">FreeCAD - A free parametric CAD modelling suite.</div>
+			
+			<p>The Arduino development environment and large code repository made this possible. Without the 
+			FastLED library I would be forced to write my own library which would have taken a lot of time.</p>
+			<img onclick="openURL('https://www.arduino.cc');" style="cursor: pointer;" class="image_pane" src="img/cred/Arduino-logo_300-200.png"></img>
+			<div class="image_desc">Arduino - AVR development platform.</div>
 		</div>
 		<!-- credits -->
 		<div class="credits">
