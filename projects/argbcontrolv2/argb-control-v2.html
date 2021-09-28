@@ -25,6 +25,7 @@
 				<div><a href="#design">Design</a></div>
 				<div><a href="#schema">Schematic</a></div>
 				<div><a href="#layout">PCB Layout</a></div>
+				<div><a href="#bom">Bill of Materials</a></div>
 				<div><a href="#enclosure">Enclosure</a></div>
 				<div><a href="#code">Code</a></div>
 				<div><a href="#conclusion">Conclusion</a></div>
@@ -152,14 +153,152 @@
 			
 			<!-- drawing the enclosure for 3d printing -->
 			<div class="chapter">
+				<a id="bom" href="#bom"><img style="width: 20px;" src="img/star.svg" /></a>Bill of Materials
+			</div>
+			<table>
+			<tbody>
+				<tr>
+					<td class="td-header td-num">#</td>
+					<td class="td-header td-loc">Location</td>
+					<td class="td-header td-comp">Component</td>
+					<td class="td-header td-info">Info</td>
+				</tr>
+				<!-- resistors -->
+				<tr>
+					<td>2</td>
+					<td>R1, R2</td>
+					<td>Resistor</td>
+					<td>15k&Omega;, 1%, 100mW, SMD 0805</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>R3, R6, R7</td>
+					<td>Resistor</td>
+					<td>1k&Omega;, 1%, 100mW, SMD 0805</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>R4, R5, R8</td>
+					<td>Resistor</td>
+					<td>10k&Omega;, 1%, 100mW, SMD 0805</td>
+				</tr>
+				<!-- capacitors -->
+				<tr>
+					<td>15</td>
+					<td>C1, C2, C3, C4, C5, C6, C7, C10, C11, C12, C13, C14, C15, C16, C17</td>
+					<td>Capacitor</td>
+					<td>100nF, 16V, X7R, SMD 0805</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>C8, C9</td>
+					<td>Capacitor</td>
+					<td>20pF, 16V, C0G, SMD 0805</td>
+				</tr>
+				<!-- diodes -->
+				<tr>
+					<td>2</td>
+					<td>D1, D2</td>
+					<td>Diode</td>
+					<td>SP1003-01DTG, TVS, SMD 0402</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>D3, D4</td>
+					<td>Diode</td>
+					<td>599-0181-007F, LED, SMD 0805</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>D5, D6, D7, D8, D9, D10, D11, D12</td>
+					<td>Diode</td>
+					<td>S07B, Rectifier, SMD 0805</td>
+				</tr>
+				<!-- xtal -->
+				<tr>
+					<td>1</td>
+					<td>X1</td>
+					<td>Crystal</td>
+					<td>16MHz, &#177;50ppm, 20pF, HC-49SMD</td>
+				</tr>
+				<!-- integrated circuits -->
+				<tr>
+					<td>2</td>
+					<td>Q1, Q2</td>
+					<td>MOSFET</td>
+					<td>Si2307CDS, P-Channel, SOT-23-3</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>U1</td>
+					<td>IC</td>
+					<td>FT232RL, SSOP-28</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>U2 A</td>
+					<td>IC</td>
+					<td>ATmega328P, DIP-28</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>U2 B</td>
+					<td>IC Socket</td>
+					<td>4828-3004-CP, Socket, DIP-28</td>
+				</tr>
+				<!-- connectors -->
+				<tr>
+					<td>1</td>
+					<td>USB1</td>
+					<td>Connector</td>
+					<td>UX60-MB-5ST, micro-USB</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>H1</td>
+					<td>Header</td>
+					<td>4-pin, AMP peripheral, P2.54mm</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>H2</td>
+					<td>Header</td>
+					<td>2-pin, pin header, P2.54mm</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>H3, H4, H5, H6, H7, H8, H9, H10</td>
+					<td>Header</td>
+					<td>3-pin, pin header, P2.54mm</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>H11, H12, H13, H14, H15, H16, H17, H18</td>
+					<td>Header</td>
+					<td>4-pin, 47053-1000, P2.54mm</td>
+				</tr>
+				
+				
+				
+				
+			</tbody>
+			</table>
+			
+			<!-- drawing the enclosure for 3d printing -->
+			<div class="chapter">
 				<a id="enclosure" href="#enclosure"><img style="width: 20px;" src="img/star.svg" /></a>Enclosure
 			</div>
+			
 			<p></p>
 			
+			<img onclick="openURL('img/enc/enclosure_bot.png');" style="cursor: zoom-in;" class="image_pane" src="img/enc/enclosure_bot.png"></img>
+			<div class="image_desc">The enclosure bottom.</div>
 			
 			
+			<p></p>
 			
-			
+			<img onclick="openURL('img/enc/enclosure_top.png');" style="cursor: zoom-in;" class="image_pane" src="img/enc/enclosure_top.png"></img>
+			<div class="image_desc">The enclosure top with access ports.</div>
 			
 			
 			

@@ -126,3 +126,42 @@ div.codeblock
 	font-family: consolas;
 	font-size: 13px;
 }
+
+/* table style */
+table
+{
+	width: 600px;
+	padding: 0px;
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+td
+{
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+}
+td.td-num
+{
+	width: 6%;
+	border-right: 2px solid #ddd;
+}
+td.td-loc
+{
+	width: 20%;
+	border-right: 2px solid #ddd;
+}
+td.td-comp
+{
+	width: 20%;
+	border-right: 2px solid #ddd;
+}
+td.td-info
+{
+	width: auto;
+}
+td.td-header
+{
+	border-bottom: 2px solid #ddd;
+}
