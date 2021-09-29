@@ -165,3 +165,11 @@ td.td-header
 {
 	border-bottom: 2px solid #ddd;
 }
+
+/* video */
+div.video, .video-webm
+{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
