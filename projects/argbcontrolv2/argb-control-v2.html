@@ -35,88 +35,48 @@
 			<div class="chapter">
 				<a id="intro" href="#intro"><img style="width: 20px;" src="img/star.svg" /></a>Introduction
 			</div>
-			<p>For the majority of people that own a computer treat it as nothing more than a fancy box. A tool that 
-			breaks often and is always a hassle to update or kept up to speed. They use it to check their 
-			e-mails, view and print documents, update their socials and perhaps play a game of solitaire. However, in 
-			the eyes of an enthusiast it's not just a fancy box, nor an over-powered calculator. It's a piece of 
-			furniture that requires the same love and care like anything else in the household.</p>
-			<p>In particular the gaming community is expressing this love in a way similar to the people tuning their 
-			car's performance and looks. When you search online for water-cooled PCs you find images of hardline tube 
-			cooling systems with colorful coolant and lots of lighting and wiring matching in color to fit the 
-			theme.</p>
-			<p>Mind you I'm not a hardcore PC tuner, but I do enjoy tinkering when I have the oppertunity. One of 
-			those opportunities had risen when I was building my new PC. The new case has plenty of room for future 
-			upgrades and eight fan mounting points. I had some multicolor fans laying around and I thought it would be 
-			fun to have those installed. Unfortunately, the original controller for those fans was lacking so I opted 
-			to make my own.</p>
+			<p>For the majority of people that own a computer treat it as nothing more than a fancy box. A tool that breaks often and is always a hassle to update or kept up to speed. They use it to check their e-mails, view and print documents, update their socials and perhaps play a game of solitaire. However, in the eyes of an enthusiast it's not just a fancy box, nor an over-powered calculator. It's a piece of furniture that requires the same love and care like anything else in the household.</p>
+			<p>In particular the gaming community is expressing this love in a way similar to the people tuning their car's performance and looks. When you search online for water-cooled PCs you find images of hardline tube cooling systems with colorful coolant and lots of lighting and wiring matching in color to fit the theme.</p>
+			<p>Mind you I'm not a hardcore PC tuner, but I do enjoy tinkering when I have the opportunity. One of those opportunities had risen when I was building my new PC. The new case has plenty of room for future upgrades and eight fan mounting points. I had some multi-color fans laying around and I thought it would be fun to have those installed. Unfortunately, the original controller for those fans was lacking so I opted to make my own.</p>
 			<img onclick="openURL('img/argb_on.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/argb_on.jpg"></img>
-			<div class="image_desc">A 120mm multicolor computer fan from Sharkoon. (not affiliated)</div>
+			<div class="image_desc">A 120mm multi-color computer fan from Sharkoon. (not affiliated)</div>
 			
 			<!-- reviewing my options -->
 			<div class="chapter">
 				<a id="design" href="#design"><img style="width: 20px;" src="img/star.svg" /></a>Design
 			</div>
-			<p>I'm not sure exactly which product series they used to produce the red, green and blue(RGB) lighting 
-			effects, but I suspect they are WS2812B. The WS2812 are a popular choice in RGB strips and are consealed 
-			in a reasonably sized package. Having checked, it turns out the fan's enclosure has a LED strip glued 
-			inside to form a circle.</p>
+			<p>I'm not sure exactly which product series they used to produce the red, green and blue(RGB) lighting effects, but I suspect they are WS2812B. The WS2812 are a popular choice in RGB strips and are concealed in a reasonably sized package. Having checked, it turns out the fan's enclosure has a LED strip glued inside to form a circle.</p>
 			
 			<img onclick="openURL('img/argb_fan_open.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/argb_fan_open.jpg"></img>
 			<div class="image_desc">Translucent cover removed exposing the LED strip.</div>
 			
-			<p>These types of LEDs are also referred to as addressable-RGB. A device sends data to it and the circuitry 
-			inside the LED manages the color output. All you need is 5 volts of power and a data line.</p>
+			<p>These types of LEDs are also referred to as addressable-RGB. A device sends data to it and the circuitry inside the LED manages the color output. All you need is 5 volts of power and a data line.</p>
 			
-			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for 
-			controlling addressable LEDs. All other LEDs on the strip have their data input daisy-chained together on the output 
-			of the previous. Only the first LED in the chain needs to be informed on what behaviour the others are 
-			to display. So to control eight RGB fans I need eight digital pins, one for each LED strip. The Mega328 has 
-			10 digital I/O pins and 5 analog pins that can be configured to be inputs, or digital outputs. I need to 
-			ensure to keep at least one interrupt-capable pin as an input to signal the controller to step to the next pattern.</p>
+			<p>Reviewing my options I stumbled on a library available for the Arduino named "FastLED" that allows for controlling addressable LEDs. All other LEDs on the strip have their data input daisy-chained together on the output of the previous. Only the first LED in the chain needs to be informed on what behavior the others are to display. So to control eight RGB fans I need eight digital pins, one for each LED strip. The Mega328 has 10 digital I/O pins and 5 analog pins that can be configured to be inputs, or digital outputs. I need to ensure to keep at least one interrupt-capable pin as an input to signal the controller to step to the next pattern.</p>
 			
-			<p>To really complete this project I need an enclosure to protect the circuitry. Since 2.5 inch drive 
-			mounting points are very common nowadays it would be nice if the controller can be mounted in an open slot. 
-			But that's completely optional. I own a 3D-printer so I can print the enclosure right 
-			here at my workshop.</p>
+			<p>To really complete this project I need an enclosure to protect the circuitry. Since 2.5 inch drive mounting points are very common nowadays it would be nice if the controller can be mounted in an open slot. But that's completely optional. I own a 3D-printer so I can print the enclosure right here at my workshop.</p>
 			
 			<!-- drawing the schematic -->
 			<div class="chapter">
 				<a id="schema" href="#schema"><img style="width: 20px;" src="img/star.svg" /></a>Schematics
 			</div>
-			<p>In the schematic below I've drawn an AMP connector to supply the controller with power. The vast majority of 
-			power supplies will have such a connector available. The reverse polarity protection is optional, but 
-			I've added it in for good measure. You could opt for a SATA power connector instead if you feel like 
-			leaving AMP in a museum. </p>
+			<p>In the schematic below I've drawn an AMP connector to supply the controller with power. The vast majority of power supplies will have such a connector available. The reverse polarity protection is optional, but I've added it in for good measure. You could opt for a SATA power connector instead if you feel like leaving AMP in a museum.</p>
 			<img onclick="openURL('img/schem/Supply.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/Supply.png"></img>
 			<div class="image_desc">ATX Power supply to the controller.</div>
 			
-			<p>Next up is the USB connection. I want to be able to upload code to the device with as much ease as 
-			possible. This is accomplished using an FT232 integrated circuit (IC). It translates the USB communication 
-			protocol to UART which the microcontroller understands. I've added two LEDs to indicate when 
-			communication is happening. These are available on pin 22 and 23 by default on a fresh FT232 IC. The 
-			USB lines have SP1003 transient suppression diodes to help protect against electrostatic discharge events. 
-			This could be, for example, someone touching the bare circuit board while not properly grounded or a power 
-			spike from the power supply unit. The RX, TX and DTR(Data Terminal Ready) signal lines will go to the 
-			microcontroller.</p>
+			<p>Next up is the USB connection. I want to be able to upload code to the device with as much ease as possible. This is accomplished using an FT232 integrated circuit (IC). It translates the USB communication protocol to UART which the microcontroller understands. I've added two LEDs to indicate when communication is happening. These are available on pin 22 and 23 by default on a fresh FT232 IC. The USB lines have SP1003 transient suppression diodes to help protect against electrostatic discharge events. This could be, for example, someone touching the bare circuit board while not properly grounded or a power spike from the power supply unit. The RX, TX and DTR(Data Terminal Ready) signal lines will go to the microcontroller.</p>
 			<img onclick="openURL('img/schem/UART.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/UART.png"></img>
 			<div class="image_desc">USB input to UART conversion.</div>
 			
-			<p>Hooking up the microcontroller is pretty straight forward. The RX, TX and DTR will go to pin 1, 2 and 3 
-			of the Mega328. Remember to swap the RX and TX lines between the two IC's. When someone is transmitting(TX) 
-			the other is recieving(RX), and visa versa. Pin 12 through 19 will serve as data lines for the ARGB strips. 
-			Pin 4 is an interrupt-capable pin which I'll hook up to a switch. You could hook up the switch directly, but
-			I really recommend using a debouncing circuit.</p>
+			<p>Hooking up the microcontroller is pretty straight forward. The RX, TX and DTR will go to pin 1, 2 and 3 of the Mega328. Remember to swap the RX and TX lines between the two IC's. When someone is transmitting(TX) the other is receiving(RX), and visa versa. Pin 12 through 19 will serve as data lines for the ARGB strips. Pin 4 is an interrupt-capable pin which I'll hook up to a switch. You could hook up the switch directly, but I really recommend using a debouncing circuit.</p>
 			<img onclick="openURL('img/schem/MCU.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/MCU.png"></img>
 			<div class="image_desc">Microcontroller circuitry with switch debouncing.</div>
 			
-			<p>The data lines from the Mega328 will each branch off to a 3-pin header. Two of those pins are for power 
-			and ground bypassed with a capacitor to reduce some noise.</p>
+			<p>The data lines from the Mega328 will each branch off to a 3-pin header. Two of those pins are for power and ground bypassed with a capacitor to reduce some noise.</p>
 			<img onclick="openURL('img/schem/LEDStrips.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/LEDStrips.png"></img>
 			<div class="image_desc">Addressable-RGB strip headers.</div>
 			
-			<p>Lastly, the fans get their 12 volts directly from the PC's power supply unit. We're not going to track or 
-			modify the fan's speed. The fans are an inductive load so I added flyback diodes to protect against voltage 
-			spikes. </p>
+			<p>Lastly, the fans get their 12 volts directly from the PC's power supply unit. We're not going to track or modify the fan's speed. The fans are an inductive load so I added fly-back diodes to protect against voltage spikes.</p>
 			<img onclick="openURL('img/schem/FanConnection.png');" style="cursor: zoom-in;" class="image_pane" src="img/schem/FanConnection.png"></img>
 			<div class="image_desc">12V ventilation headers.</div>
 			
@@ -125,27 +85,17 @@
 				<a id="layout" href="#layout"><img style="width: 20px;" src="img/star.svg" /></a>PCB Layout
 			</div>
 			
-			<p>The only through-hole(TH) components on the PCB are headers and the Mega328, everything else are surface-mounted 
-			devices(SMD). I decided on TH instead of SMD for the microcontroller to make maintenance easier. This 
-			version does not have an in-system programming(ISP) interface so you can't burn a bootloader into the 
-			microcontroller directly. I may add this in future revisions. The location of the Mega328 will be populated 
-			by a 28-pin insertion socket. </p>
+			<p>The only through-hole(TH) components on the PCB are headers and the Mega328, everything else are surface-mounted devices(SMD). I decided on TH instead of SMD for the microcontroller to make maintenance easier. This version does not have an in-system programming(ISP) interface so you can't burn a bootloader into the microcontroller directly. I may add this in future revisions. The location of the Mega328 will be populated by a 28-pin insertion socket.</p>
 			<img onclick="openURL('img/pcb/top.png');" style="cursor: zoom-in;" class="image_pane" src="img/pcb/top.png"></img>
 			<div class="image_desc">PCB top layer.</div>
 			
-			<p>To isolate the 12V and 5V section I made sure the fans and ARGB header have their own copper planes on the 
-			PCB. The the common powerlines seperate as well, so it's the responsibility of the power supply unit to manage 
-			the power output. The four large non-plated drill holes are the mounting holes that should match the dimensions 
-			of a 2.5-inch drive. </p>
+			<p>To isolate the 12V and 5V section I made sure the fans and ARGB header have their own copper planes on the PCB. The the common power lines separate as well, so it's the responsibility of the power supply unit to manage the power output. The four large non-plated drill holes are the mounting holes that should match the dimensions of a 2.5-inch drive.</p>
 			
 			<p>The bottom layer is simple enough. There are no components placed and is just for soldering the TH components.</p>
 			<img onclick="openURL('img/pcb/bot.png');" style="cursor: zoom-in;" class="image_pane" src="img/pcb/bot.png"></img>
 			<div class="image_desc">PCB bottom layer.</div>
-			
-			<p>I'll not be etching the PCB myself but outsource it to <a href="https://aisler.net" target="_blank">Aisler</a> 
-			instead. They have a factory situated in Germany which is convenient for me living in the Netherlands. Note 
-			that I'm not affiliated with Aisler. Though I only need one, the minimum batch size is three and just about a week 
-			or so later the PCBs arrive. </p>
+			 
+			<p>I'll not be etching the PCB myself but outsource it to <a href="https://aisler.net" target="_blank">Aisler</a> instead. They have a factory situated in Germany which is convenient for me living in the Netherlands. Note that I'm not affiliated with Aisler. Though I only need one, the minimum batch size is three and just about a week or so later the PCBs arrive.</p>
 			
 			<img onclick="openURL('img/pcb/argb_v2.0.0.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/pcb/argb_v2.0.0.jpg"></img>
 			<div class="image_desc">The PCB above (v2.0.0) differs slightly from the layout (v2.1.0) I showed earlier.</div>
@@ -284,22 +234,15 @@
 				<a id="enclosure" href="#enclosure"><img style="width: 20px;" src="img/star.svg" /></a>Enclosure
 			</div>
 			
-			<p>The base of the enclosure is simple. It has screw holes that can be accessed from the bottom and screwed 
-			to the top. The four offsets are to make sure the through-hole components don't press onto the material. The height of 
-			offsets is about 1.6mm below the edge to take the PCB thickness in account.</p>
+			<p>The base of the enclosure is simple. It has screw holes that can be accessed from the bottom and screwed to the top. The four offsets are to make sure the through-hole components don't press onto the material. The height of offsets is about 1.6mm below the edge to take the PCB thickness in account.</p>
 			<img onclick="openURL('img/enc/enclosure_bot.png');" style="cursor: zoom-in;" class="image_pane" src="img/enc/enclosure_bot.png"></img>
 			<div class="image_desc">The enclosure bottom.</div>
 			
-			<p>The top of the enclosure is a bit more involved. Two large slots are present to allow for the power and RGB data 
-			connector to be installed on the controller. The small hole in between is used for a switch to swap RGB pattern. You 
-			could use the PC's reset switch to make the button convenient to locate. The two cutouts on the side of the enclosure 
-			is where the power cable and USB connector are present.</p>
+			<p>The top of the enclosure is a bit more involved. Two large slots are present to allow for the power and RGB data connector to be installed on the controller. The small hole in between is used for a switch to swap RGB pattern. You could use the PC's reset switch to make the button convenient to locate. The two cutouts on the side of the enclosure is where the power cable and USB connector are present.</p>
 			<img onclick="openURL('img/enc/enclosure_top.png');" style="cursor: zoom-in;" class="image_pane" src="img/enc/enclosure_top.png"></img>
 			<div class="image_desc">The top of the enclosure with access ports, viewed from the bottom.</div>
 			
-			<p>Putting it all together shows how the access ports are used. Power cable on the left, USB access on the right, but 
-			not visible in the photo. The orange/white cable leads to a switch. A single fan is installed having a 3-pin RGB 
-			connector and a 3-pin power connector.</p>
+			<p>Putting it all together shows how the access ports are used. Power cable on the left, USB access on the right, but not visible in the photo. The orange/white cable leads to a switch. A single fan is installed having a 3-pin RGB connector and a 3-pin power connector.</p>
 			<img onclick="openURL('img/enc/argb_enclosure.jpg');" style="cursor: zoom-in;" class="image_pane" src="img/enc/argb_enclosure.jpg"></img>
 			<div class="image_desc">The 3D-printed enclosure with assembled PCB inside.</div>
 			
@@ -307,12 +250,9 @@
 			<div class="chapter">
 				<a id="code" href="#code"><img style="width: 20px;" src="img/star.svg" /></a>Code
 			</div>
-			<p>Lets begin with driving the ARGB fans. Installing the FastLED library can be done through the Library 
-			Manager in the Arduino IDE, but can also be manually installed. </p>
+			<p>Lets begin with driving the ARGB fans. Installing the FastLED library can be done through the Library Manager in the Arduino IDE, but can also be manually installed.</p>
 			
-			<p>The code below demonstrates how RGB data is sent to the LED strip. Using the addLeds() method I set
-			the LED type to "NeoPixel" which is usually WS2812, data output set to "8" which is Arduino's D8 pin, and
-			the amount of LEDs in the chain to 1.</p>
+			<p>The code below demonstrates how RGB data is sent to the LED strip. Using the addLeds() method I set the LED type to "NeoPixel" which is usually WS2812, data output set to "8" which is Arduino's D8 pin, and the amount of LEDs in the chain to 1.</p>
 			<div class="codeblock">
 <pre><code class="cpp">#include &lt;FastLED.h&gt;
 
@@ -336,9 +276,7 @@ void loop()
 			</div>
 			<div class="image_desc">Sets the first LED in the chain to a white color.</div>
 			
-			<p>The interrupt-capable pin we reserved for swapping the pattern needs to be attached to a function. When 
-			the iterrupt pin gets triggered it halts all execution and runs the linked code. After the function returns, 
-			execution resumes from where it left off.</p>
+			<p>The interrupt-capable pin we reserved for swapping the pattern needs to be attached to a function. When the interrupt pin gets triggered it halts all execution and runs the linked code. After the function returns, execution resumes from where it left off.</p>
 			<div class="codeblock">
 <pre><code class="cpp">void doInterrupt()
 {
@@ -352,12 +290,9 @@ void setup()
 </code></pre>
 			</div>
 			<div class="image_desc">Sets D2 as digital interrupt pin.</div>
-			<p>The interrupt will be triggered on the falling-edge of the input signal. This means that as soon as the 
-			input goes from 5V to 0V, the interrupt code gets executed. </p>
+			<p>The interrupt will be triggered on the falling-edge of the input signal. This means that as soon as the input goes from 5V to 0V, the interrupt code gets executed.</p>
 			
-			<p>During operation multiple fan controllers will need access to the same color palette. The state of the 
-			palette has to stay unaltered while the state of behavior of each fan may differ. Each palette will have a
-			class containing that information.</p>
+			<p>During operation multiple fan controllers will need access to the same color palette. The state of the palette has to stay unaltered while the state of behavior of each fan may differ. Each palette will have a class containing that information.</p>
 			<div class="codeblock">
 <pre><code class="cpp">#include &lt;FastLED.h&gt;
 
@@ -377,9 +312,7 @@ public:
 			</div>
 			<div class="image_desc">Palette.hpp</div>
 			
-			<p>The display behavior is determined by a class whose sole responsibility is to step through the palette 
-			in a predictable way. Providing the palette, a buffer of LED memory and the current state of the pattern.
-			After completion the new state of the pattern is returned so it can be saved for the next step.</p>
+			<p>The display behavior is determined by a class whose sole responsibility is to step through the palette in a predictable way. Providing the palette, a buffer of LED memory and the current state of the pattern. After completion the new state of the pattern is returned so it can be saved for the next step.</p>
 			<div class="codeblock">
 <pre><code class="cpp">#include &lt;FastLED.h&gt;
 #include "Palette.hpp"
@@ -400,9 +333,7 @@ public:
 			</div>
 			<div class="image_desc">Behavior.hpp</div>
 			
-			<p>To keep track of each LED buffer and state for each fan we specify a controller class. Here I can set the 
-			palette and behavior to be used for a specific fan. I didn't design this RGB controller to handle different 
-			palettes and behaviors per fan, but the code would make this a possibility for future designs.</p>
+			<p>To keep track of each LED buffer and state for each fan we specify a controller class. Here I can set the palette and behavior to be used for a specific fan. I didn't design this RGB controller to handle different palettes and behaviors per fan, but the code would make this a possibility for future designs.</p>
 			<div class="codeblock">
 <pre><code class="cpp">#include &lt;FastLED.h&gt;
 #include "Palette.hpp"
@@ -434,18 +365,13 @@ public:
 			</div>
 			<div class="image_desc">Controller.hpp</div>
 			
-			<p>If you're interested in the implementation of the given classes please visit the corresponding  
-			<a href="https://github.com/NullpointerWorks/argb-controller-v2/tree/main/argb20_controller_v2" target="_blank">GitHub</a> 
-			repository.</p>
+			<p>If you're interested in the implementation of the given classes please visit the corresponding <a href="https://github.com/NullpointerWorks/argb-controller-v2/tree/main/argb20_controller_v2" target="_blank">GitHub</a> repository.</p>
 			
 			<!-- conclusion -->
 			<div class="chapter">
 				<a id="conclusion" href="#conclusion"><img style="width: 20px;" src="img/star.svg" /></a>Conclusion
 			</div>
-			<p>All in all, this was an awesome project that combined various skills and tools so to produce a 
-			complete and working device. This project would have cost me a fortune if it were not for the free 
-			tools available. Just add some more palette's and behaviors and you'd have a fully customized RGB 
-			lighting for your PC.</p>
+			<p>All in all, this was an awesome project that combined various skills and tools so to produce a complete and working device. This project would have cost me a fortune if it were not for the free tools available. Just add some more palette's and behaviors and you'd have a fully customized RGB lighting for your PC.</p>
 			
 			<div class="video">
 				<video class="video-webm" controls>
